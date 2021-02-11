@@ -48,6 +48,8 @@ enum kyori{
     長い,
 }
 
+let kousei;
+
 //% color="#74ad1d" block="ﾕｰﾚｶ複合ﾕﾆｯﾄ2.7"
 
 namespace eureka_blocks {
@@ -204,6 +206,44 @@ namespace eureka_blocks {
 //% color="#74ad1d" block="ﾕｰﾚｶ単体ﾕﾆｯﾄ" 
 
 namespace eureka_blocks_soro {
+
+  //% color="#f071bd" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 |%pin|" group="酸素センサー"
+  export function eureka_O2kousei(pin: eureka_IO) {
+    switch (pin) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        kousei=pins.analogReadPin(AnalogPin.P0);
+        break; 
+      case eureka_IO.Bﾎﾟｰﾄ:
+        kousei=pins.analogReadPin(AnalogPin.P1);
+        break;
+     case eureka_IO.Cﾎﾟｰﾄ:
+        kousei=pins.analogReadPin(AnalogPin.P2);
+        break; 
+        }
+  }
+
+  //% color="#f071bd" weight=26 blockId=eureka_O2LED block="酸素センサー校正 |%pin|" group="酸素センサー"
+  export function eureka_O2LED(pin: eureka_IO) {
+    switch (pin) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P0)/kousei* 100) / 100 + "% "))
+        break; 
+      case eureka_IO.Bﾎﾟｰﾄ:
+        O2=pins.analogReadPin(AnalogPin.P1);
+        break;
+     case eureka_IO.Cﾎﾟｰﾄ:
+        O2=pins.analogReadPin(AnalogPin.P2);
+        break; 
+        }
+  }
+
+
+
+
+
+
+
+
 
   //% color="#6041f1"  weight=60 blockId=eureka_L9110 block="ﾓｰﾀｰﾌｧﾝL |%mode| |%pin|" group="4_ユーレカ装置"
   //% mode.min=-100 mode.max=100
@@ -698,24 +738,6 @@ namespace eureka_blocks_soro {
         return (pins.analogReadPin(AnalogPin.P2) / 1023) * 100;
     }
   }
-
-  //% shim=DS18B20::Temperature
-  //% group="5_センサの値"
-  export function Temperature(p: number): number {
-    // Fake function for simulator
-    return 0;
-  }
-
-
-
-  //% weight=33 blockId="Temperature_number"
-  //% block="温度ｾﾝｻDS |%p|"
-  //% p.fieldEditor="gridpicker" p.fieldOptions.columns=4
-  //% group="5_単体ユニットセンサー"
-  export function TemperatureNumber(p: eureka_IO): number {
-    let temp = Temperature(p);
-    let x = Math.round(temp / 100);
-    return x;
-  }
 }
+
 
