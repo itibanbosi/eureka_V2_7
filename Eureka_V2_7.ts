@@ -48,7 +48,7 @@ enum kyori{
     長い,
 }
 
-let kousei;
+let kousei=1.0;
 
 //% color="#74ad1d" block="ﾕｰﾚｶ複合ﾕﾆｯﾄ2.7"
 
@@ -222,17 +222,17 @@ namespace eureka_blocks_soro {
         }
   }
 
-  //% color="#f071bd" weight=26 blockId=eureka_O2LED block="酸素センサー校正 |%pin|" group="酸素センサー"
+  //% color="#f071bd" weight=26 blockId=eureka_O2LED block="酸素センサー |%pin|" group="酸素センサー"
   export function eureka_O2LED(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P0)/kousei* 100) / 100 + "% "))
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P0)/kousei* 100) / 100 + "% "));
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-        O2=pins.analogReadPin(AnalogPin.P1);
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P1)/kousei* 100) / 100 + "% "));
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
-        O2=pins.analogReadPin(AnalogPin.P2);
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P2)/kousei* 100) / 100 + "% "));
         break; 
         }
   }
