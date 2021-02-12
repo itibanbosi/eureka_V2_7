@@ -228,13 +228,13 @@ namespace eureka_blocks_soro {
   export function eureka_O2LED(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95* 100) / 100 + "% "));
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95* 10) / 10 + "% "));
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95* 100) / 100 + "% "));
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95* 10) / 10 + "% "));
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 100) / 100 + "% "));
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 10) / 10 + "% "));
         break; 
         }
   }
