@@ -48,7 +48,9 @@ enum kyori{
     長い,
 }
 
-let kousei=1.0;
+let kousei_A=1;
+let kousei_B=1;
+let kousei_C=1;
 
 //% color="#74ad1d" block="ﾕｰﾚｶ複合ﾕﾆｯﾄ2.7"
 
@@ -211,13 +213,13 @@ namespace eureka_blocks_soro {
   export function eureka_O2kousei(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
-        kousei=pins.analogReadPin(AnalogPin.P0);
+        kousei_A=pins.analogReadPin(AnalogPin.P0);
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-        kousei=pins.analogReadPin(AnalogPin.P1);
+        kousei_B=pins.analogReadPin(AnalogPin.P1);
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
-        kousei=pins.analogReadPin(AnalogPin.P2);
+        kousei_C=pins.analogReadPin(AnalogPin.P2);
         break; 
         }
   }
@@ -226,18 +228,31 @@ namespace eureka_blocks_soro {
   export function eureka_O2LED(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P0)/kousei*20.95* 100) / 100 + "% "));
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95* 100) / 100 + "% "));
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P1)/kousei*20.95* 100) / 100 + "% "));
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95* 100) / 100 + "% "));
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P2)/kousei*20.95* 100) / 100 + "% "));
+        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 100) / 100 + "% "));
         break; 
         }
   }
 
-
+  //% color="#f071bd" weight=26 blockId=eureka_O2serial block="酸素センサー |%pin|" group="酸素センサー"
+  export function eureka_O2serial(pin: eureka_IO) {
+    switch (pin) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        serial.writeLine("" +pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95);
+        break; 
+      case eureka_IO.Bﾎﾟｰﾄ:
+        serial.writeLine("" +pins.analogReadPin(AnalogPin.P1)/kousei_A*20.95);
+        break;
+     case eureka_IO.Cﾎﾟｰﾄ:
+        serial.writeLine("" +pins.analogReadPin(AnalogPin.P2)/kousei_A*20.95);
+        break; 
+        }
+  }
 
 
 
