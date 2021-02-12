@@ -239,7 +239,7 @@ namespace eureka_blocks_soro {
         }
   }
 
-  //% color="#f071bd" weight=26 blockId=eureka_O2serial block="酸素をシリアル出力 |%pin|" group="酸素センサー"
+  //% color="#f071bd" weight=26 blockId=eureka_O2serial block="酸素濃度をシリアル出力 |%pin|" group="酸素センサー"
   export function eureka_O2serial(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
