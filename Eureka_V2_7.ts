@@ -139,7 +139,7 @@ namespace eureka_blocks {
 
 
 
-  //% color="#009A00"  weight=80 block="光ｾﾝｻ値 |%limit| より暗い |%tlp|" group="3_電気の利用ユニット"
+  //% color="#009A00"  weight=81 block="光ｾﾝｻ値 |%limit| より暗い |%tlp|" group="3_電気の利用ユニット"
   //% limit.min=0 limit.max=100
   export function decideLight(limit: number, tlp: eureka_tlp): boolean {
     switch (tlp) {
@@ -162,7 +162,7 @@ namespace eureka_blocks {
 
 
 
-  //% color="#009A00"  weight=81 blockId=eureka_denkitemp block="光ｾﾝｻ値 |%pin|" group="3_電気の利用ユニット"
+  //% color="#009A00"  weight=80 blockId=eureka_denkitemp block="光ｾﾝｻ値 |%pin|" group="3_電気の利用ユニット"
   export function eureka_denkitemp(pin: eureka_denki): number {
     switch (pin) {
       case eureka_denki.Aﾎﾟｰﾄ:
@@ -180,6 +180,21 @@ namespace eureka_blocks {
       case eureka_denki.Bﾎﾟｰﾄ:
         pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
         return pins.digitalReadPin(DigitalPin.P16);
+    }
+  }
+
+
+  //% color="#a0522d"  weight=79 blockId=eureka_denkihumanLED block="人感ｾﾝｻの値を表示する" group="3_電気の利用ユニット"
+  export function eureka_denkihumanLED(pin: eureka_p1416) {
+    pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
+    pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
+    switch (pin) {
+      case eureka_p1416.Aﾎﾟｰﾄ:
+       basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
+        break;
+      case eureka_p1416.Bﾎﾟｰﾄ:
+       basic.showNumber(pins.digitalReadPin(DigitalPin.P16));
+        break;
     }
   }
 
