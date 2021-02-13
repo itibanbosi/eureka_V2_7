@@ -171,7 +171,7 @@ namespace eureka_blocks {
         return Math.round((pins.analogReadPin(AnalogPin.P1) / 1023) * 100);
     }
   }
-  //% color="#009A00"  weight=77 blockId=eureka_denkihuman block="人感ｾﾝｻ値 |%pin|" group="3_電気の利用ユニット"
+  //% color="#a0522d"  weight=77 blockId=eureka_denkihuman block="人感ｾﾝｻ値 |%pin|" group="3_電気の利用ユニット"
   export function eureka_denkihuman(pin: eureka_denki): number {
     switch (pin) {
       case eureka_denki.Aﾎﾟｰﾄ:
@@ -184,7 +184,7 @@ namespace eureka_blocks {
   }
 
 
-  //% color="#009A00"  weight=79 blockId=eureka_denkihumanLED block="人感ｾﾝｻの値を表示する" group="3_電気の利用ユニット"
+  //% color="#a0522d"  weight=79 blockId=eureka_denkihumanLED block="人感ｾﾝｻの値を表示する" group="3_電気の利用ユニット"
   export function eureka_denkihumanLED(pin: eureka_p1416) {
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
@@ -201,7 +201,7 @@ namespace eureka_blocks {
 
 
 
-  //% color="#009A00" weight=78 block="人が動いたら |%pin|" group="3_電気の利用ユニット"
+  //% color="#a0522d" weight=78 block="人が動いたら |%pin|" group="3_電気の利用ユニット"
   export function humanDetection(pin: eureka_p1416): boolean {
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
