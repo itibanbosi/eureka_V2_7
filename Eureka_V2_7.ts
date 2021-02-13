@@ -277,7 +277,7 @@ namespace eureka_blocks_soro {
         }
   }
 
-  //% color="#00008b" weight=26 blockId=eureka_O2serial block="酸素濃度をシリアル出力 |%pin|" group="酸素センサー"
+ //% color="#00008b" weight=26 blockId=eureka_O2serial block="酸素濃度をシリアル出力 |%pin|" group="酸素センサー"
   export function eureka_O2serial(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
@@ -292,10 +292,20 @@ namespace eureka_blocks_soro {
         }
   }
 
-
-
-
-
+  //% color="#ff1493"  weight=24 blockId=eureka_O2disp block="酸素濃度 |%pin|" group="酸素センサー"
+  export function eureka_O2disp(pin: eureka_IO): number {
+    switch (pin) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        return pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95;
+        break; 
+      case eureka_IO.Bﾎﾟｰﾄ:
+        return pins.analogReadPin(AnalogPin.P1)/kousei_A*20.95;
+        break;
+     case eureka_IO.Cﾎﾟｰﾄ:
+        return pins.analogReadPin(AnalogPin.P2)/kousei_A*20.95;
+        break; 
+        }
+  }
 
 
   //% color="#6041f1"  weight=60 blockId=eureka_L9110 block="ﾓｰﾀｰﾌｧﾝL |%mode| |%pin|" group="4_ユーレカ装置"
