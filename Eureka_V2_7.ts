@@ -280,13 +280,13 @@ namespace eureka_blocks_soro {
   export function eureka_O2serial(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
-        serial.writeLine("" +pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95);
+        serial.writeLine("" +Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_C*20.95* 100) / 100);
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-        serial.writeLine("" +pins.analogReadPin(AnalogPin.P1)/kousei_A*20.95);
+        serial.writeLine("" +Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_C*20.95* 100) / 100);
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
-        serial.writeLine("" +pins.analogReadPin(AnalogPin.P2)/kousei_A*20.95);
+        serial.writeLine("" +Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 100) / 100);
         break; 
         }
   }
