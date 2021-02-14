@@ -644,12 +644,14 @@ namespace eureka_blocks_soro {
     }
   }
 
-
-  //% color="#2a2aba" weight=28 blockId=sonar_ping_3 block="Aﾎﾟｰﾄ きょりが |%limit| cmより |%nagasa|" group="超音波距離センサー"
+/*
+  //% color="#2a2aba" weight=28 blockId=sonar_ping_3 block="きょりが |%limit| cmより |%nagasa| |%pin|" group="超音波距離センサー"
   //% limit.min=0 limit.max=50
-  export function sonar_ping_3(limit: number ,nagasa:kyori) :boolean{
+  export function sonar_ping_3(limit: number ,nagasa:kyori,pin: eureka_tlp) {
     let  d1=0;
     let  d2=0;
+    if  (pin=="Aﾎﾟｰﾄ") {
+
 
 
         for ( let i=0 ; i<20 ; i++ ){
@@ -679,10 +681,12 @@ namespace eureka_blocks_soro {
                 return true;
             }
         }
-  }
+    }
+    }
+*/  
 
 
-/*
+
  //% color="#2a2aba" weight=27 blockId=sonar_ping_3 block="きょりが |%limit| cmより長い |%pin|" group="超音波距離センサー"
   //% limit.min=0 limit.max=50
   export function sonar_ping_3(limit: number ,pin:eureka_tlp) :boolean{
@@ -734,7 +738,7 @@ namespace eureka_blocks_soro {
             }
         }
 
-*/
+
 
   //% color="#2a2aba" weight=28 blockId=sonar_ping_4 block="きょりが |%limit| cmより短い |%pin|" group="超音波距離センサー"
   //% limit.min=0 limit.max=50
@@ -786,6 +790,8 @@ namespace eureka_blocks_soro {
 
             }
         }
+
+
 
   //% color="#f071bd" weight=26 blockId=eureka_CdS block="単体_ﾌｫﾄﾘﾌﾚｸﾀｰ |%pin|" group="5_単体ユニットセンサー"
   //% advanced=true
