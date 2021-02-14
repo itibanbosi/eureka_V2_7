@@ -645,26 +645,14 @@ namespace eureka_blocks_soro {
   }
 
 
-
-/*
-  //% color="#2a2aba" weight=28 blockId=sonar_ping_3 block="Aﾎﾟｰﾄ |%sonar_quality| きょりが |%limit| cmより |%nagasa|" group="超音波距離センサー"
+  //% color="#2a2aba" weight=28 blockId=sonar_ping_3 block="Aﾎﾟｰﾄ きょりが |%limit| cmより |%nagasa|" group="超音波距離センサー"
   //% limit.min=0 limit.max=50
-  export function sonar_ping_3(sonar_quality:sonar_avg,limit: number ,nagasa:kyori) :boolean{
-        if (sonar_quality　==sonar_avg.平均20回){
-            sonar_quality=20;
-        }
-        if (sonar_quality==sonar_avg.平均5回){
-            sonar_quality=5;
-        }
-        if (sonar_quality==sonar_avg.生データ){
-            sonar_quality=1;
-        }
-
+  export function sonar_ping_3(limit: number ,nagasa:kyori) :boolean{
     let  d1=0;
     let  d2=0;
 
 
-        for ( let i=0 ; i<sonar_quality ; i++ ){
+        for ( let i=0 ; i<20 ; i++ ){
         // send
         basic.pause(5);
         pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
@@ -679,22 +667,23 @@ namespace eureka_blocks_soro {
         }
         switch(nagasa){
             case kyori.短い:
-                if (Math.idiv(d2/sonar_quality, 58) * 1.5 < limit) {
+                if (Math.idiv(d2/20, 58) * 1.5 < limit) {
                 return true;
                 } else {
                 return false;
                 }
             case kyori.長い:
-                if (Math.idiv(d2/sonar_quality, 58) * 1.5 < limit) {
+                if (Math.idiv(d2/20, 58) * 1.5 < limit) {
                 return false;
                 } else {
                 return true;
             }
         }
   }
-*/
+
+
+/*
  //% color="#2a2aba" weight=27 blockId=sonar_ping_3 block="きょりが |%limit| cmより長い |%pin|" group="超音波距離センサー"
-  //% advanced=true 
   //% limit.min=0 limit.max=50
   export function sonar_ping_3(limit: number ,pin:eureka_tlp) :boolean{
     let  d1=0;
@@ -745,10 +734,9 @@ namespace eureka_blocks_soro {
             }
         }
 
-
+*/
 
   //% color="#2a2aba" weight=28 blockId=sonar_ping_4 block="きょりが |%limit| cmより短い |%pin|" group="超音波距離センサー"
-  //% advanced=true
   //% limit.min=0 limit.max=50
   export function sonar_ping_4(limit: number ,pin:eureka_tlp) :boolean{
     let  d1=0;
