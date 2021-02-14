@@ -52,7 +52,7 @@ let kousei_A=1;
 let kousei_B=1;
 let kousei_C=1;
 
-//% color="#74ad1d" block="ﾕｰﾚｶ複合ﾕﾆｯﾄ2.7"
+//% color="#006400" block="ふくごうﾕﾆｯﾄ2.7"
 
 namespace eureka_blocks {
 
@@ -243,7 +243,7 @@ namespace eureka_blocks {
     }
   }
 }
-//% color="#74ad1d" block="ﾕｰﾚｶ単体ﾕﾆｯﾄ" 
+//% color="#191970" block="たん体ﾕﾆｯﾄ" 
 
 namespace eureka_blocks_soro {
 
