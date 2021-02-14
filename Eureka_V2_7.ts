@@ -314,7 +314,7 @@ namespace eureka_blocks_soro {
         }
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-         let O2_1=Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_A*20.95* 10) / 10
+         let O2_1=Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95* 10) / 10
         if (O2_1 >= 5 && O2_1 <= 25){
         basic.showString(convertToText("" + O2_1 + "% "));
         }
@@ -323,7 +323,7 @@ namespace eureka_blocks_soro {
         }   
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
-         let O2_2=Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_A*20.95* 10) / 10
+         let O2_2=Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 10) / 10
         if (O2_2 >= 5 && O2_2 <= 25){
         basic.showString(convertToText("" + O2_2 + "% "));
         }
@@ -339,10 +339,10 @@ namespace eureka_blocks_soro {
     basic.pause(100);
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
-        serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_C*20.95* 100) / 100));
+        serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95* 100) / 100));
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-        serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_C*20.95* 100) / 100));
+        serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95* 100) / 100));
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
         serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 100) / 100));
