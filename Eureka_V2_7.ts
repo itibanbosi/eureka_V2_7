@@ -924,7 +924,7 @@ namespace eureka_blocks_soro {
 
 
 
-    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色で点めつは|%mode| ﾎﾟｰﾄ|%pin|" group="2_にじ色ＬＥＤ"
+    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色で点めつは|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
     export function eureka_fullcolor(color:LED_color, mode:LED_onoff, pin: eureka_tlp) {
     switch (color) {
         case LED_color.赤:
