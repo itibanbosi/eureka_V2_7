@@ -343,7 +343,7 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#c0c0c0" weight=58 blockId=eureka_relay block="電磁・FETﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode| |%pin|" group="単体のリレーユニット"
+  //% color="#a9a9a9" weight=58 blockId=eureka_relay block="電磁・FETﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode| |%pin|" group="単体のリレーユニット"
   export function eureka_relay(mode: onoff, pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
@@ -366,7 +366,7 @@ namespace eureka_blocks_soro {
         }
     }
   }
-  //% color="#c0c0c0" weight=56 blockId=eureka_relay_2 block="FETﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%limit| |%syuturyoku|" group="単体のリレーユニット"
+  //% color="#a9a9a9" weight=56 blockId=eureka_relay_2 block="FETﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%limit| |%syuturyoku|" group="単体のリレーユニット"
   //% syuturyoku.min=0 syuturyoku.max=1023
   export function eureka_relay_2(syuturyoku: number, pin: eureka_IO) {
     switch (pin) {
