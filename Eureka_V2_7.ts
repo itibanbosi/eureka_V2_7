@@ -423,7 +423,7 @@ namespace eureka_blocks_soro {
   }
 
   //% color="#40a6ff" weight=54 blockId=eureka_white block="単体_LED |%mode| |%pin|" group="たん体ＬＥＤ"
-  //% advanced=true
+
   export function eureka_white(port: eureka_IO, mode: onoff) {
     switch (port) {
       case eureka_IO.Aﾎﾟｰﾄ:
