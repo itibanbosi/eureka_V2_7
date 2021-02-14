@@ -243,11 +243,11 @@ namespace eureka_blocks {
     }
   }
 }
-//% color="#191970" block="たん体ﾕﾆｯﾄ" 
+//% color="#0000ff" block="たん体ﾕﾆｯﾄ" 
 
 namespace eureka_blocks_soro {
 
-  //% color="#0000cd" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 |%pin|" group="酸素センサー"
+  //% color="#4169e1" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 |%pin|" group="酸素センサー"
   export function eureka_O2kousei(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
