@@ -343,7 +343,7 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#525252" weight=58 blockId=eureka_relay block="単体_ﾘﾚｰ(ﾃﾞｼﾞﾀﾙ) |%mode| |%pin|" group="単体のリレーユニット"
+  //% color="#525252" weight=58 blockId=eureka_relay block="電磁・FETﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode| |%pin|" group="単体のリレーユニット"
   export function eureka_relay(mode: onoff, pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
