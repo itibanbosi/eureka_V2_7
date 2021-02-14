@@ -336,6 +336,7 @@ namespace eureka_blocks_soro {
 
  //% color="#4169e1" weight=26 blockId=eureka_O2serial block="酸素濃度をシリアル出力 |%pin|" group="酸素センサー"
   export function eureka_O2serial(pin: eureka_IO) {
+    basic.pause(100);
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
         serial.writeLine("" +Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_C*20.95* 100) / 100);
