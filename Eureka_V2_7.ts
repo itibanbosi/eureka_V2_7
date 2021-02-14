@@ -52,6 +52,46 @@ let kousei_A=1;
 let kousei_B=1;
 let kousei_C=1;
 
+enum LED_onoff {
+    しない=0,
+    ゆっくり=2000,
+    ふつう=800,
+    はやく=300,
+}
+enum LED_color {
+    赤,
+    オレンジ,
+    き,
+    みどり,
+    水,
+    青,
+    むらさき,
+    白,
+}
+enum LED_wait {
+    //% block="えらぶ",
+    zero,
+    //% block="0.2",
+    dot_two,
+    //% block="0.3",
+    dot_three,
+    //% block="0.5",
+    dot_five,
+    //% block="0.8",
+    dot_eight,
+    //% block="1",
+    one,
+    //% block="1.3",
+    one_dot_three,
+    //% block="1.5",
+    one_dot_five,
+    //% block="1.8",
+    one_dot_eight,
+    //% block="2",
+    two,
+    }
+
+
 //% color="#32cd32" block="ふく合ﾕﾆｯﾄ2.7"
 
 namespace eureka_blocks {
@@ -498,7 +538,7 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#ffd700"  weight=38 block="単体_光ｾﾝｻ |%limit| より暗い |%pin|" group="5_単体ユニットセンサー"
+  //% color="#ffd700"  blockID=tantai_Light weight=38 block="単体_光ｾﾝｻ |%limit| より暗い |%pin|" group="5_単体ユニットセンサー"
   //% advanced=true
   //% limit.min=0 limit.max=100
   export function tantai_Light(limit: number, pin: eureka_IO): boolean {
@@ -804,6 +844,247 @@ namespace eureka_blocks_soro {
         return (pins.analogReadPin(AnalogPin.P2) / 1023) * 100;
     }
   }
+
+
+  //% color="#ff7b00" weight=17 blockId=eureka_whiteselect block="LEDライト |%mode| 時間|%LED_time|秒 ポート|%pin|" group="1_たん体ＬＥＤ"
+  export function eureka_whiteselect ( mode: onoff , LED_time:LED_wait , port:eureka_IO) {
+    switch (port) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        if (mode == onoff.ON) {
+            pins.digitalWritePin(DigitalPin.P0, 1);
+            basic.pause(LED_time*200);
+        return
+        } else {
+            pins.digitalWritePin(DigitalPin.P0, 0);
+            basic.pause(LED_time*200);
+        return
+        }
+      case eureka_IO.Bﾎﾟｰﾄ:
+        if (mode == onoff.ON) {
+            pins.digitalWritePin(DigitalPin.P1, 1);
+            basic.pause(LED_time*200);
+        return
+        } else {
+            pins.digitalWritePin(DigitalPin.P1, 0);
+            basic.pause(LED_time*200);
+        return
+        }
+      case eureka_IO.Cﾎﾟｰﾄ:
+        if (mode == onoff.ON) {
+            pins.digitalWritePin(DigitalPin.P2, 1);
+            basic.pause(LED_time*200);
+        return
+        } else {
+            pins.digitalWritePin(DigitalPin.P2, 0);
+            basic.pause(LED_time*200);
+        return
+        }
+    }
+  }
+
+
+
+  //% color="#ff7b00" weight=17 blockId=eureka_white2 block="単体_LED　点めつは|%mode|　ﾎﾟｰﾄ|%pin|" group="1_たん体ＬＥＤ"
+  export function eureka_white2(mode: LED_onoff ,port: eureka_IO ) {
+    switch (port) {
+      case eureka_IO.Aﾎﾟｰﾄ:
+        pins.digitalWritePin(DigitalPin.P0, 1);
+        basic.pause(mode);
+        if (mode == 0){
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        basic.pause(mode);
+        return
+        }
+
+      case eureka_IO.Bﾎﾟｰﾄ:
+        pins.digitalWritePin(DigitalPin.P1, 1);
+        basic.pause(mode);
+        if (mode == 0){
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P1, 0);
+        basic.pause(mode);
+        return
+        }
+      case eureka_IO.Cﾎﾟｰﾄ:
+        pins.digitalWritePin(DigitalPin.P2, 1);
+        basic.pause(mode);
+        if (mode == 0){
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P2, 0);
+        basic.pause(mode);
+        return
+     }
+
+    }
+  }
+
+
+
+    //% color="#858585" weight=54 blockId=eureka_fullcolor block="にじ色ＬＥＤ |%color|色で点めつは|%mode| ﾎﾟｰﾄ|%pin|" group="2_にじ色ＬＥＤ"
+    export function eureka_fullcolor(color:LED_color, mode:LED_onoff, pin: eureka_tlp) {
+    switch (color) {
+        case LED_color.赤:
+        pins.digitalWritePin(DigitalPin.P0, 1);
+        basic.pause(mode);
+        if (mode ==0) {
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        pins.digitalWritePin(DigitalPin.P14, 0);
+        basic.pause(mode);
+        return
+        }
+        case LED_color.オレンジ:
+        pins.digitalWritePin(DigitalPin.P0, 1);
+        pins.analogWritePin(AnalogPin.P13, 240)
+        basic.pause(mode);
+        if (mode ==0) {
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        pins.digitalWritePin(DigitalPin.P14, 0);
+        basic.pause(mode);
+         return
+        }
+        case LED_color.き:
+        pins.digitalWritePin(DigitalPin.P0, 1);
+        pins.digitalWritePin(DigitalPin.P13, 1);
+        basic.pause(mode);
+        if (mode ==0) {
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        pins.digitalWritePin(DigitalPin.P14, 0);
+        basic.pause(mode);
+        return
+        }
+            case LED_color.みどり:
+        pins.digitalWritePin(DigitalPin.P13, 1);
+        basic.pause(mode);
+        if (mode ==0) {
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        pins.digitalWritePin(DigitalPin.P14, 0);
+        basic.pause(mode);
+        return
+        }
+            case LED_color.水:
+        pins.analogWritePin(AnalogPin.P0, 388)
+        pins.digitalWritePin(DigitalPin.P13, 1);
+        pins.analogWritePin(AnalogPin.P14, 767)
+        basic.pause(mode);
+        if (mode ==0) {
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        pins.digitalWritePin(DigitalPin.P14, 0);
+         basic.pause(mode);
+        return
+        }
+            case LED_color.青:
+        pins.digitalWritePin(DigitalPin.P14, 1);
+        basic.pause(mode);
+        if (mode ==0) {
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        pins.digitalWritePin(DigitalPin.P14, 0);
+        basic.pause(mode);
+        return
+        }
+            case LED_color.むらさき:
+        pins.analogWritePin(AnalogPin.P0, 338)
+        pins.digitalWritePin(DigitalPin.P14, 1);
+        basic.pause(mode);
+        if (mode ==0) {
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        pins.digitalWritePin(DigitalPin.P14, 0);
+        basic.pause(mode);
+        return
+        }
+            case LED_color.白:
+        pins.digitalWritePin(DigitalPin.P0, 1);
+        pins.digitalWritePin(DigitalPin.P13, 1);
+        pins.digitalWritePin(DigitalPin.P14, 1);
+        basic.pause(mode);
+        if (mode ==0) {
+            return
+        } else {
+        pins.digitalWritePin(DigitalPin.P0, 0);
+        pins.digitalWritePin(DigitalPin.P13, 0);
+        pins.digitalWritePin(DigitalPin.P14, 0);
+        basic.pause(mode);
+        return
+        }
+      }
+    }
+
+    //% color="#4741f1" weight=53 blockId=eureka_tl_blue block="青 点とう|%mode| |%pin|" group="2_にじ色ＬＥＤ"
+    export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
+    switch (pin) {
+      case eureka_tlp.Aﾎﾟｰﾄ:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P14, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P14, 0);
+        }
+      case eureka_tlp.Bﾎﾟｰﾄ:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P16, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P16, 0);
+        }
+    }
+  }
+  //% color="#009A00" weight=52 blockId=eureka_tl_green block="みどり 点とう|%mode| |%pin|" group="2_にじ色ＬＥＤ"
+  export function eureka_tl_green(mode: onoff, pin: eureka_tlp) {
+    switch (pin) {
+      case eureka_tlp.Aﾎﾟｰﾄ:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P13, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P13, 0);
+        }
+      case eureka_tlp.Bﾎﾟｰﾄ:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P15, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P15, 0);
+        }
+    }
+  }
+  //% color="#ff4940" weight=51 blockId=eureka_tl_red block="赤 点とう|%mode| |%pin|" group="2_にじ色ＬＥＤ"
+  export function eureka_tl_red(mode: onoff, pin: eureka_tlp) {
+    switch (pin) {
+      case eureka_tlp.Aﾎﾟｰﾄ:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P0, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P0, 0);
+        }
+      case eureka_tlp.Bﾎﾟｰﾄ:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P1, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P1, 0);
+        }
+    }
+  }
+
 }
 
 
