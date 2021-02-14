@@ -339,13 +339,13 @@ namespace eureka_blocks_soro {
     basic.pause(100);
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
-        serial.writeLine("" +Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_C*20.95* 100) / 100);
+        serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_C*20.95* 100) / 100));
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-        serial.writeLine("" +Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_C*20.95* 100) / 100);
+        serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_C*20.95* 100) / 100));
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
-        serial.writeLine("" +Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 100) / 100);
+        serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 100) / 100));
         break; 
         }
   }
