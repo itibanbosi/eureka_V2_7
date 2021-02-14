@@ -357,10 +357,10 @@ namespace eureka_blocks_soro {
         return pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95;
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-        return pins.analogReadPin(AnalogPin.P1)/kousei_A*20.95;
+        return pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95;
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
-        return pins.analogReadPin(AnalogPin.P2)/kousei_A*20.95;
+        return pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95;
         break; 
         }
   }
