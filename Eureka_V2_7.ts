@@ -283,7 +283,7 @@ namespace eureka_blocks {
     }
   }
 }
-//% color="#0000ff" weight=90 block="たん体ﾕﾆｯﾄ" 
+//% color="#0000ff" weight=98 block="たん体ﾕﾆｯﾄ" 
 
 namespace eureka_blocks_soro {
 
