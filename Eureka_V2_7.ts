@@ -247,7 +247,7 @@ namespace eureka_blocks {
 
 namespace eureka_blocks_soro {
 
-  //% color="#00008b" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 |%pin|" group="酸素センサー"
+  //% color="#4169e1" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 |%pin|" group="酸素センサー"
   export function eureka_O2kousei(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
@@ -261,8 +261,7 @@ namespace eureka_blocks_soro {
         break; 
         }
   }
-
-  //% color="#00008b" weight=26 blockId=eureka_O2LED block="酸素濃度をmicro:bitへ表示 |%pin|" group="酸素センサー"
+  //% color="#4169e1" weight=26 blockId=eureka_O2LED block="酸素濃度をmicro:bitへ表示 |%pin|" group="酸素センサー"
   export function eureka_O2LED(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
@@ -277,7 +276,7 @@ namespace eureka_blocks_soro {
         }
   }
 
- //% color="#00008b" weight=26 blockId=eureka_O2serial block="酸素濃度をシリアル出力 |%pin|" group="酸素センサー"
+ //% color="#4169e1" weight=26 blockId=eureka_O2serial block="酸素濃度をシリアル出力 |%pin|" group="酸素センサー"
   export function eureka_O2serial(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
@@ -292,7 +291,7 @@ namespace eureka_blocks_soro {
         }
   }
 
-  //% color="#ff1493"  weight=24 blockId=eureka_O2disp block="酸素濃度 |%pin|" group="酸素センサー"
+  //% color="#4169e1"  weight=24 blockId=eureka_O2disp block="酸素濃度 |%pin|" group="酸素センサー"
   export function eureka_O2disp(pin: eureka_IO): number {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
