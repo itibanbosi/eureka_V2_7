@@ -92,7 +92,7 @@ enum LED_wait {
     }
 
 
-//% color="#32cd32" weight=51 block="ふく合ﾕﾆｯﾄ2.7"
+//% color="#32cd32" weight=100 block="ふく合ﾕﾆｯﾄ2.7"
 
 namespace eureka_blocks {
 
@@ -283,7 +283,7 @@ namespace eureka_blocks {
     }
   }
 }
-//% color="#0000ff" block="たん体ﾕﾆｯﾄ" 
+//% color="#0000ff" weight=90 block="たん体ﾕﾆｯﾄ" 
 
 namespace eureka_blocks_soro {
 
