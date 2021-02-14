@@ -408,7 +408,6 @@ namespace eureka_blocks_soro {
   }
 
   //% color="#858585" weight=52 blockId=eureka_m_driver block="ﾓｰﾀｰﾄﾞﾗｲﾊﾞｰD 動き|%mode| |%pin|" group="モータードライバー"
-  //% advanced=true
   export function eureka_m_driver(mode: moter_d, pin: eureka_denki) {
     switch (pin) {
       case eureka_denki.Aﾎﾟｰﾄ:
