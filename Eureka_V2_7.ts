@@ -52,7 +52,7 @@ let kousei_A=1;
 let kousei_B=1;
 let kousei_C=1;
 
-//% color="#006400" block="ふくごうﾕﾆｯﾄ2.7"
+//% color="#006400" block="ふく合ﾕﾆｯﾄ2.7"
 
 namespace eureka_blocks {
 
