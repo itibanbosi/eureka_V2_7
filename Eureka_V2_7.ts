@@ -305,13 +305,31 @@ namespace eureka_blocks_soro {
   export function eureka_O2LED(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.Aﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95* 10) / 10 + "% "));
+        let O2_0=Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95* 10) / 10
+        if (O2_0 >= 5 && O2_0 <= 25){
+        basic.showString(convertToText("" + O2_0 + "% "));
+        }
+        else {
+            basic.showString("ER")
+        }
         break; 
       case eureka_IO.Bﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95* 10) / 10 + "% "));
+         let O2_1=Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_A*20.95* 10) / 10
+        if (O2_1 >= 5 && O2_1 <= 25){
+        basic.showString(convertToText("" + O2_1 + "% "));
+        }
+        else {
+            basic.showString("ER")
+        }   
         break;
      case eureka_IO.Cﾎﾟｰﾄ:
-        basic.showString(convertToText("" + Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 10) / 10 + "% "));
+         let O2_2=Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_A*20.95* 10) / 10
+        if (O2_2 >= 5 && O2_2 <= 25){
+        basic.showString(convertToText("" + O2_2 + "% "));
+        }
+        else {
+            basic.showString("ER")
+        }   
         break; 
         }
   }
