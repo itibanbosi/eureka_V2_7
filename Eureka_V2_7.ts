@@ -98,7 +98,7 @@ namespace eureka_blocks {
 
     //% blockId=eureka_buz_set
     //% block=ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす
-    // group="1 初期設定"
+    // group="1_初期設定"
     //% color="#ff3d03"
     //% weight=90
 
