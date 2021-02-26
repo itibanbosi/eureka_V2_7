@@ -628,7 +628,7 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#2a2aba" weight=30 blockId=sonar_ping block="超音波きょりｾﾝｻ　ﾎﾟｰﾄ|%pin| |%sonar_quality|" group="超音波距離センサー"
+  //% color="#2a2aba" weight=30 blockId=sonar_ping block="超音波きょりｾﾝｻ |%sonar_quality| ﾎﾟｰﾄ|%pin|" group="超音波距離センサー"
   export function ping(sonar_quality:sonar_avg,pin: eureka_tlp): number {
         if (sonar_quality　==sonar_avg.平均20回){
             sonar_quality=20
