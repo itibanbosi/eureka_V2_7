@@ -1055,8 +1055,8 @@ namespace eureka_blocks_soro {
       }
     }
 
-    //% color="#4741f1" weight=53 blockId=eureka_tl_blue block="青 点とう|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
-    export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
+    //% color="#4741f1" weight=53 blockId=eureka_full_blue block="青 点とう|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
+    export function eureka_full_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
       case eureka_tlp.A:
         if (mode == onoff.ON) {
@@ -1072,8 +1072,8 @@ namespace eureka_blocks_soro {
         }
     }
   }
-  //% color="#32cd32" weight=52 blockId=eureka_tl_green block="みどり 点とう|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
-  export function eureka_tl_green(mode: onoff, pin: eureka_tlp) {
+  //% color="#32cd32" weight=52 blockId=eureka_full_green block="みどり 点とう|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
+  export function eureka_full_green(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
       case eureka_tlp.A:
         if (mode == onoff.ON) {
@@ -1089,8 +1089,8 @@ namespace eureka_blocks_soro {
         }
     }
   }
-  //% color="#ff4940" weight=51 blockId=eureka_tl_red block="赤 点とう|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
-  export function eureka_tl_red(mode: onoff, pin: eureka_tlp) {
+  //% color="#ff4940" weight=51 blockId=eureka_full_red block="赤 点とう|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
+  export function eureka_full_red(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
       case eureka_tlp.A:
         if (mode == onoff.ON) {
