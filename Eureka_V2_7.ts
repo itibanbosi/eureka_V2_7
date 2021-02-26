@@ -1,19 +1,19 @@
 enum eureka_IO {
-  Aﾎﾟｰﾄ,
-  Bﾎﾟｰﾄ,
-  Cﾎﾟｰﾄ,
+  A,
+  B,
+  C,
 }
 enum eureka_denki {
-  Aﾎﾟｰﾄ,
-  Bﾎﾟｰﾄ,
+  A,
+  B,
 }
 enum eureka_tlp {
-  Aﾎﾟｰﾄ,
-  Bﾎﾟｰﾄ,
+  A,
+  B,
 }
 enum eureka_p1416 {
-  Aﾎﾟｰﾄ,
-  Bﾎﾟｰﾄ,
+  A,
+  B,
 }
 enum onoff {
   ON,
@@ -107,16 +107,16 @@ namespace eureka_blocks {
   }
 
 
-    //% color="#4741f1" weight=89 blockId=eureka_tl_blue block="青信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
+    //% color="#4741f1" weight=89 blockId=eureka_tl_blue block="青信号 点灯|%mode| |%pin|ﾎﾟｰﾄ" group="2_信号機ユニット"
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
-      case eureka_tlp.Aﾎﾟｰﾄ:
+      case eureka_tlp.A:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P14, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P14, 0);
         }
-      case eureka_tlp.Bﾎﾟｰﾄ:
+      case eureka_tlp.B:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P16, 1);
         } else {
@@ -124,16 +124,16 @@ namespace eureka_blocks {
         }
     }
   }
-  //% color="#ffa800" weight=87 blockId=eureka_tl_yellow block="黄信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
+  //% color="#ffa800" weight=87 blockId=eureka_tl_yellow block="黄信号 点灯|%mode| |%pin|ﾎﾟｰﾄ" group="2_信号機ユニット"
   export function eureka_tl_yellow(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
-      case eureka_tlp.Aﾎﾟｰﾄ:
+      case eureka_tlp.A:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P13, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P13, 0);
         }
-      case eureka_tlp.Bﾎﾟｰﾄ:
+      case eureka_tlp.B:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P15, 1);
         } else {
@@ -141,16 +141,16 @@ namespace eureka_blocks {
         }
     }
   }
-  //% color="#ff4940" weight=85 blockId=eureka_tl_red block="赤信号 点灯|%mode| |%pin|" group="2_信号機ユニット"
+  //% color="#ff4940" weight=85 blockId=eureka_tl_red block="赤信号 点灯|%mode| |%pin|ﾎﾟｰﾄ" group="2_信号機ユニット"
   export function eureka_tl_red(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
-      case eureka_tlp.Aﾎﾟｰﾄ:
+      case eureka_tlp.A:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P0, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P0, 0);
         }
-      case eureka_tlp.Bﾎﾟｰﾄ:
+      case eureka_tlp.B:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P1, 1);
         } else {
@@ -165,13 +165,13 @@ namespace eureka_blocks {
     basic.pause(second * 1000);
   }
 
-  //% color="#228b22"  weight=82 blockId=eureka_denkiLED block="光ｾﾝｻの値を表示する |%tlp|" group="3_電気の利用ユニット"
+  //% color="#228b22"  weight=82 blockId=eureka_denkiLED block="光ｾﾝｻの値を表示する |%tlp|ﾎﾟｰﾄ" group="3_電気の利用ユニット"
   export function eureka_denkiLED(tlp: eureka_tlp){
     switch (tlp) {
-      case eureka_tlp.Aﾎﾟｰﾄ:
+      case eureka_tlp.A:
              basic.showNumber(Math.round((pins.analogReadPin(AnalogPin.P0) / 1023) * 100));
         break;
-      case eureka_tlp.Bﾎﾟｰﾄ:
+      case eureka_tlp.B:
              basic.showNumber(Math.round((pins.analogReadPin(AnalogPin.P1) / 1023) * 100));
         break;
     }
@@ -179,18 +179,18 @@ namespace eureka_blocks {
 
 
 
-  //% color="#009A00"  weight=81 block="光ｾﾝｻ値 |%limit| より暗い |%tlp|" group="3_電気の利用ユニット"
+  //% color="#009A00"  weight=81 block="光ｾﾝｻ値 |%limit| より暗い |%tlp|ﾎﾟｰﾄ" group="3_電気の利用ユニット"
   //% limit.min=0 limit.max=100
   export function decideLight(limit: number, tlp: eureka_tlp): boolean {
     switch (tlp) {
-      case eureka_tlp.Aﾎﾟｰﾄ:
+      case eureka_tlp.A:
         if ((pins.analogReadPin(AnalogPin.P0) / 1023) * 100 < limit) {
           return true;
         } else {
           return false;
         }
         break;
-      case eureka_tlp.Bﾎﾟｰﾄ:
+      case eureka_tlp.B:
         if ((pins.analogReadPin(AnalogPin.P1) / 1023) * 100 < limit) {
           return true;
         } else {
@@ -202,22 +202,22 @@ namespace eureka_blocks {
 
 
 
-  //% color="#009A00"  weight=80 blockId=eureka_denkitemp block="光ｾﾝｻ値 |%pin|" group="3_電気の利用ユニット"
+  //% color="#009A00"  weight=80 blockId=eureka_denkitemp block="光ｾﾝｻ値 |%pin|ﾎﾟｰﾄ" group="3_電気の利用ユニット"
   export function eureka_denkitemp(pin: eureka_denki): number {
     switch (pin) {
-      case eureka_denki.Aﾎﾟｰﾄ:
+      case eureka_denki.A:
         return Math.round((pins.analogReadPin(AnalogPin.P0) / 1023) * 100);
-      case eureka_denki.Bﾎﾟｰﾄ:
+      case eureka_denki.B:
         return Math.round((pins.analogReadPin(AnalogPin.P1) / 1023) * 100);
     }
   }
-  //% color="#a0522d"  weight=77 blockId=eureka_denkihuman block="人感ｾﾝｻ値 |%pin|" group="3_電気の利用ユニット"
+  //% color="#a0522d"  weight=77 blockId=eureka_denkihuman block="人感ｾﾝｻ値 |%pin|ﾎﾟｰﾄ" group="3_電気の利用ユニット"
   export function eureka_denkihuman(pin: eureka_denki): number {
     switch (pin) {
-      case eureka_denki.Aﾎﾟｰﾄ:
+      case eureka_denki.A:
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
         return pins.digitalReadPin(DigitalPin.P14);
-      case eureka_denki.Bﾎﾟｰﾄ:
+      case eureka_denki.B:
         pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
         return pins.digitalReadPin(DigitalPin.P16);
     }
@@ -229,10 +229,10 @@ namespace eureka_blocks {
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
     switch (pin) {
-      case eureka_p1416.Aﾎﾟｰﾄ:
+      case eureka_p1416.A:
        basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
         break;
-      case eureka_p1416.Bﾎﾟｰﾄ:
+      case eureka_p1416.B:
        basic.showNumber(pins.digitalReadPin(DigitalPin.P16));
         break;
     }
@@ -241,19 +241,19 @@ namespace eureka_blocks {
 
 
 
-  //% color="#a0522d" weight=78 block="人が動いたら |%pin|" group="3_電気の利用ユニット"
+  //% color="#a0522d" weight=78 block="人が動いたら |%pin|ﾎﾟｰﾄ" group="3_電気の利用ユニット"
   export function humanDetection(pin: eureka_p1416): boolean {
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
     switch (pin) {
-      case eureka_p1416.Aﾎﾟｰﾄ:
+      case eureka_p1416.A:
         if (pins.digitalReadPin(DigitalPin.P14) == 1) {
           return true;
         } else {
           return false;
         }
         break;
-      case eureka_p1416.Bﾎﾟｰﾄ:
+      case eureka_p1416.B:
         if (pins.digitalReadPin(DigitalPin.P16) == 1) {
           return true;
         } else {
@@ -265,16 +265,16 @@ namespace eureka_blocks {
 
 
 
-  //% color="#a9a9a9"  weight=75 blockId=eureka_denkiwhite block="LED |%mode| |%pin|" group="3_電気の利用ユニット"
+  //% color="#a9a9a9"  weight=75 blockId=eureka_denkiwhite block="LED |%mode| |%pin|ﾎﾟｰﾄ" group="3_電気の利用ユニット"
   export function eureka_denkiwhite(mode: onoff, port: eureka_denki) {
     switch (port) {
-      case eureka_denki.Aﾎﾟｰﾄ:
+      case eureka_denki.A:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P13, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P13, 0);
         }
-      case eureka_denki.Bﾎﾟｰﾄ:
+      case eureka_denki.B:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P15, 1);
         } else {
@@ -287,24 +287,24 @@ namespace eureka_blocks {
 
 namespace eureka_blocks_soro {
 
-  //% color="#4169e1" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 |%pin|" group="酸素センサー"
+  //% color="#4169e1" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 |%pin|ﾎﾟｰﾄ" group="酸素センサー"
   export function eureka_O2kousei(pin: eureka_IO) {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         kousei_A=pins.analogReadPin(AnalogPin.P0);
         break; 
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         kousei_B=pins.analogReadPin(AnalogPin.P1);
         break;
-     case eureka_IO.Cﾎﾟｰﾄ:
+     case eureka_IO.C:
         kousei_C=pins.analogReadPin(AnalogPin.P2);
         break; 
         }
   }
-  //% color="#4169e1" weight=26 blockId=eureka_O2LED block="酸素濃度をmicro:bitへ表示 |%pin|" group="酸素センサー"
+  //% color="#4169e1" weight=26 blockId=eureka_O2LED block="酸素濃度をmicro:bitへ表示 |%pin|ﾎﾟｰﾄ" group="酸素センサー"
   export function eureka_O2LED(pin: eureka_IO) {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         let O2_0=Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95* 10) / 10
         if (O2_0 >= 5 && O2_0 <= 25){
         basic.showString(convertToText("" + O2_0 + "% "));
@@ -313,7 +313,7 @@ namespace eureka_blocks_soro {
             basic.showString("ER")
         }
         break; 
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
          let O2_1=Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95* 10) / 10
         if (O2_1 >= 5 && O2_1 <= 25){
         basic.showString(convertToText("" + O2_1 + "% "));
@@ -322,7 +322,7 @@ namespace eureka_blocks_soro {
             basic.showString("ER")
         }   
         break;
-     case eureka_IO.Cﾎﾟｰﾄ:
+     case eureka_IO.C:
          let O2_2=Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 10) / 10
         if (O2_2 >= 5 && O2_2 <= 25){
         basic.showString(convertToText("" + O2_2 + "% "));
@@ -334,44 +334,44 @@ namespace eureka_blocks_soro {
         }
   }
 
- //% color="#4169e1" weight=26 blockId=eureka_O2serial block="酸素濃度をシリアル出力 |%pin|" group="酸素センサー"
+ //% color="#4169e1" weight=26 blockId=eureka_O2serial block="酸素濃度をシリアル出力 |%pin|ﾎﾟｰﾄ" group="酸素センサー"
   export function eureka_O2serial(pin: eureka_IO) {
     basic.pause(100);
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95* 100) / 100));
         break; 
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95* 100) / 100));
         break;
-     case eureka_IO.Cﾎﾟｰﾄ:
+     case eureka_IO.C:
         serial.writeLine(convertToText(Math.round( pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95* 100) / 100));
         break; 
         }
   }
 
-  //% color="#4169e1"  weight=24 blockId=eureka_O2disp block="酸素濃度 |%pin|" group="酸素センサー"
+  //% color="#4169e1"  weight=24 blockId=eureka_O2disp block="酸素濃度 |%pin|ﾎﾟｰﾄ" group="酸素センサー"
   export function eureka_O2disp(pin: eureka_IO): number {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         return pins.analogReadPin(AnalogPin.P0)/kousei_A*20.95;
         break; 
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         return pins.analogReadPin(AnalogPin.P1)/kousei_B*20.95;
         break;
-     case eureka_IO.Cﾎﾟｰﾄ:
+     case eureka_IO.C:
         return pins.analogReadPin(AnalogPin.P2)/kousei_C*20.95;
         break; 
         }
   }
 
 
-  //% color="#6041f1"  weight=60 blockId=eureka_L9110 block="ﾓｰﾀｰﾌｧﾝL |%mode| |%pin|" group="4_ユーレカ装置"
+  //% color="#6041f1"  weight=60 blockId=eureka_L9110 block="ﾓｰﾀｰﾌｧﾝL |%mode| |%pin|ﾎﾟｰﾄ" group="4_ユーレカ装置"
   //% advanced=true
   //% mode.min=-100 mode.max=100
   export function L9110driver(port: eureka_denki, mode: number) {
     switch (port) {
-      case eureka_denki.Aﾎﾟｰﾄ:
+      case eureka_denki.A:
         if (mode > 0) {
           pins.analogWritePin(AnalogPin.P0, Math.round(mode * 10.23));
           pins.digitalWritePin(DigitalPin.P13, 0);
@@ -385,7 +385,7 @@ namespace eureka_blocks_soro {
           pins.digitalWritePin(DigitalPin.P13, 0);
         }
         break;
-      case eureka_denki.Bﾎﾟｰﾄ:
+      case eureka_denki.B:
         if (mode > 0) {
           pins.analogWritePin(AnalogPin.P1, Math.round(mode * 10.23));
           pins.digitalWritePin(DigitalPin.P15, 0);
@@ -402,22 +402,22 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#a9a9a9" weight=58 blockId=eureka_relay block="電磁・FETﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode| |%pin|" group="単体のリレーユニット"
+  //% color="#a9a9a9" weight=58 blockId=eureka_relay block="電磁・FETﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode| |%pin|ﾎﾟｰﾄ" group="単体のリレーユニット"
   export function eureka_relay(mode: onoff, pin: eureka_IO) {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P0, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P0, 0);
         }
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P1, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P1, 0);
         }
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P2, 1);
         } else {
@@ -429,23 +429,23 @@ namespace eureka_blocks_soro {
   //% syuturyoku.min=0 syuturyoku.max=1023
   export function eureka_relay_2(syuturyoku: number, pin: eureka_IO) {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ: {
+      case eureka_IO.A: {
         return pins.analogWritePin(AnalogPin.P0, syuturyoku);
       }
-      case eureka_IO.Bﾎﾟｰﾄ: {
+      case eureka_IO.B: {
         return pins.analogWritePin(AnalogPin.P1, syuturyoku);
       }
-      case eureka_IO.Cﾎﾟｰﾄ: {
+      case eureka_IO.C: {
         return pins.analogWritePin(AnalogPin.P2, syuturyoku);
       }
     }
   }
 
 
-  //% color="#20b2aa" weight=52 blockId=eureka_m_driver block="ﾓｰﾀｰﾄﾞﾗｲﾊﾞｰD 動き|%mode| |%pin|" group="モータードライバー"
+  //% color="#20b2aa" weight=52 blockId=eureka_m_driver block="ﾓｰﾀｰﾄﾞﾗｲﾊﾞｰD 動き|%mode| |%pin|ﾎﾟｰﾄ" group="モータードライバー"
   export function eureka_m_driver(mode: moter_d, pin: eureka_denki) {
     switch (pin) {
-      case eureka_denki.Aﾎﾟｰﾄ:
+      case eureka_denki.A:
         if (mode == moter_d.両方前) {
           pins.digitalWritePin(DigitalPin.P0, 1);
           pins.digitalWritePin(DigitalPin.P13, 0);
@@ -481,7 +481,7 @@ namespace eureka_blocks_soro {
           pins.digitalWritePin(DigitalPin.P13, 0);
           pins.digitalWritePin(DigitalPin.P14, 0);
         }
-      case eureka_denki.Bﾎﾟｰﾄ:
+      case eureka_denki.B:
         if (mode == moter_d.両方前) {
           pins.digitalWritePin(DigitalPin.P1, 1);
           pins.digitalWritePin(DigitalPin.P15, 0);
@@ -520,39 +520,39 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#ffd700"  weight=40 blockId=eureka_light block="単体_光ｾﾝｻ値 |%pin|" group="5_単体ユニットセンサー"
+  //% color="#ffd700"  weight=40 blockId=eureka_light block="単体_光ｾﾝｻ値 |%pin|ﾎﾟｰﾄ" group="5_単体ユニットセンサー"
   //% advanced=true
   export function tantai_light(pin: eureka_IO): number {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         return Math.round((pins.analogReadPin(AnalogPin.P0) / 1023) * 100);
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         return Math.round((pins.analogReadPin(AnalogPin.P1) / 1023) * 100);
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         return Math.round((pins.analogReadPin(AnalogPin.P2) / 1023) * 100);
     }
   }
 
-  //% color="#ffd700"  blockID=tantai_Light weight=38 block="単体_光ｾﾝｻ |%limit| より暗い |%pin|" group="5_単体ユニットセンサー"
+  //% color="#ffd700"  blockID=tantai_Light weight=38 block="単体_光ｾﾝｻ |%limit| より暗い |%pin|ﾎﾟｰﾄ" group="5_単体ユニットセンサー"
   //% advanced=true
   //% limit.min=0 limit.max=100
   export function tantai_Light(limit: number, pin: eureka_IO): boolean {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         if ((pins.analogReadPin(AnalogPin.P0) / 1023) * 100 < limit) {
           return true;
         } else {
           return false;
         }
         break;
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         if ((pins.analogReadPin(AnalogPin.P1) / 1023) * 100 < limit) {
           return true;
         } else {
           return false;
         }
         break;
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         if ((pins.analogReadPin(AnalogPin.P2) / 1023) * 100 < limit) {
           return true;
         } else {
@@ -562,13 +562,13 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#858585" weight=36 block="単体_人が動いたら |%pin|" group="5_単体ユニットセンサー"
+  //% color="#858585" weight=36 block="単体_人が動いたら |%pin|ﾎﾟｰﾄ" group="5_単体ユニットセンサー"
   //% advanced=true
   export function tantai_humanDetection(pin: eureka_IO): boolean {
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P0) == 1) {
           return true;
@@ -576,7 +576,7 @@ namespace eureka_blocks_soro {
           return false;
         }
         break;
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P1) == 1) {
           return true;
@@ -584,7 +584,7 @@ namespace eureka_blocks_soro {
           return false;
         }
         break;
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P2) == 1) {
           return true;
@@ -594,41 +594,41 @@ namespace eureka_blocks_soro {
         break;
     }
   }
-  //% color="#858585" weight=34 blockId=eureka_human block="単体_人感ｾﾝｻ値 |%pin|" group="5_単体ユニットセンサー"
+  //% color="#858585" weight=34 blockId=eureka_human block="単体_人感ｾﾝｻ値 |%pin|ﾎﾟｰﾄ" group="5_単体ユニットセンサー"
   //% advanced=true
     export function eureka_human(pin: eureka_IO): number {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         pins.setPull(DigitalPin.P0, PinPullMode.PullNone);
         return pins.digitalReadPin(DigitalPin.P0);
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
         return pins.digitalReadPin(DigitalPin.P1);
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         pins.setPull(DigitalPin.P2, PinPullMode.PullNone);
         return pins.digitalReadPin(DigitalPin.P2);
     }
   }
-  //% color="#ff7b00" weight=32 blockId=eureka_temp block="温度ｾﾝｻMCP |%pin|" group="5_単体ユニットセンサー"
+  //% color="#ff7b00" weight=32 blockId=eureka_temp block="温度ｾﾝｻMCP |%pin|ﾎﾟｰﾄ" group="5_単体ユニットセンサー"
   //% advanced=true
   export function eureka_temp(pin: eureka_IO): number {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         return Math.round(
           ((pins.analogReadPin(AnalogPin.P0) * 3250) / 1024 - 500) / 10
         );
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         return Math.round(
           ((pins.analogReadPin(AnalogPin.P1) * 3250) / 1024 - 500) / 10
         );
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         return Math.round(
           ((pins.analogReadPin(AnalogPin.P2) * 3250) / 1024 - 500) / 10
         );
     }
   }
 
-  //% color="#2a2aba" weight=30 blockId=sonar_ping block="超音波きょりｾﾝｻ　|%pin| |%sonar_quality|" group="超音波距離センサー"
+  //% color="#2a2aba" weight=30 blockId=sonar_ping block="超音波きょりｾﾝｻ　|%pin|ﾎﾟｰﾄ |%sonar_quality|" group="超音波距離センサー"
   export function ping(pin: eureka_tlp,sonar_quality:sonar_avg): number {
         if (sonar_quality　==sonar_avg.平均20回){
             sonar_quality=20
@@ -645,7 +645,7 @@ namespace eureka_blocks_soro {
     switch (pin) {
 
 
-    case eureka_tlp.Aﾎﾟｰﾄ:
+    case eureka_tlp.A:
         for ( let i=0 ; i<sonar_quality ; i++ ){
             basic.pause(5);
             pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
@@ -661,7 +661,7 @@ namespace eureka_blocks_soro {
             return Math.round(Math.idiv(d2/sonar_quality, 58)*1.5);
         break;
 
-    case eureka_tlp.Bﾎﾟｰﾄ:
+    case eureka_tlp.B:
         for  ( let i=0 ; i<sonar_quality; i++){
         basic.pause(20);
         pins.setPull(DigitalPin.P15, PinPullMode.PullNone);
@@ -679,7 +679,7 @@ namespace eureka_blocks_soro {
   }
 
 /*
-  //% color="#2a2aba" weight=28 blockId=sonar_ping_3 block="きょりが |%limit| cmより |%nagasa| |%pin|" group="超音波距離センサー"
+  //% color="#2a2aba" weight=28 blockId=sonar_ping_3 block="きょりが |%limit| cmより |%nagasa| |%pin|ﾎﾟｰﾄ" group="超音波距離センサー"
   //% limit.min=0 limit.max=50
   export function sonar_ping_3(limit: number ,nagasa:kyori,pin: eureka_tlp) {
     let  d1=0;
@@ -721,14 +721,14 @@ namespace eureka_blocks_soro {
 
 
 
- //% color="#2a2aba" weight=27 blockId=sonar_ping_3 block="きょりが |%limit| cmより長い |%pin|" group="超音波距離センサー"
+ //% color="#2a2aba" weight=27 blockId=sonar_ping_3 block="きょりが |%limit| cmより長い |%pin|ﾎﾟｰﾄ" group="超音波距離センサー"
   //% limit.min=0 limit.max=50
   export function sonar_ping_3(limit: number ,pin:eureka_tlp) :boolean{
     let  d1=0;
     let  d2=0;
 
     switch(pin){
-        case eureka_tlp.Aﾎﾟｰﾄ:
+        case eureka_tlp.A:
         for ( let i=0 ; i<20 ; i++ ){
         // send
         basic.pause(5);
@@ -748,7 +748,7 @@ namespace eureka_blocks_soro {
                 return true;
                 }
  
-        case eureka_tlp.Bﾎﾟｰﾄ:
+        case eureka_tlp.B:
         for ( let i=0 ; i<20 ; i++ ){
         // send
         basic.pause(5);
@@ -774,14 +774,14 @@ namespace eureka_blocks_soro {
 
 
 
-  //% color="#2a2aba" weight=28 blockId=sonar_ping_4 block="きょりが |%limit| cmより短い |%pin|" group="超音波距離センサー"
+  //% color="#2a2aba" weight=28 blockId=sonar_ping_4 block="きょりが |%limit| cmより短い |%pin|ﾎﾟｰﾄ" group="超音波距離センサー"
   //% limit.min=0 limit.max=50
   export function sonar_ping_4(limit: number ,pin:eureka_tlp) :boolean{
     let  d1=0;
     let  d2=0;
 
     switch(pin){
-        case eureka_tlp.Aﾎﾟｰﾄ:
+        case eureka_tlp.A:
         for ( let i=0 ; i<20 ; i++ ){
         // send
         basic.pause(5);
@@ -801,7 +801,7 @@ namespace eureka_blocks_soro {
                 return false;
                 }
  
-        case eureka_tlp.Bﾎﾟｰﾄ:
+        case eureka_tlp.B:
         for ( let i=0 ; i<20 ; i++ ){
         // send
         basic.pause(5);
@@ -827,36 +827,36 @@ namespace eureka_blocks_soro {
 
 
 
-  //% color="#f071bd" weight=26 blockId=eureka_CdS block="単体_ﾌｫﾄﾘﾌﾚｸﾀｰ |%pin|" group="5_単体ユニットセンサー"
+  //% color="#f071bd" weight=26 blockId=eureka_CdS block="単体_ﾌｫﾄﾘﾌﾚｸﾀｰ |%pin|ﾎﾟｰﾄ" group="5_単体ユニットセンサー"
   //% advanced=true
   export function eureka_CdS(pin: eureka_IO): number {
     switch (pin) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         return (pins.analogReadPin(AnalogPin.P0) / 1023) * 100;
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         return (pins.analogReadPin(AnalogPin.P1) / 1023) * 100;
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         return (pins.analogReadPin(AnalogPin.P2) / 1023) * 100;
     }
   }
 
-  //% color="#ff7b00" weight=54 blockId=eureka_white block="単体LED |%mode| |%pin|" group="たん体ＬＥＤ"
+  //% color="#ff7b00" weight=54 blockId=eureka_white block="単体LED |%mode| |%pin|ﾎﾟｰﾄ" group="たん体ＬＥＤ"
 
   export function eureka_white(port: eureka_IO, mode: onoff) {
     switch (port) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P0, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P0, 0);
         }
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P1, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P1, 0);
         }
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P2, 1);
         } else {
@@ -868,10 +868,10 @@ namespace eureka_blocks_soro {
 
 
 
-  //% color="#ff7b00" weight=17 blockId=eureka_whiteselect block="単体LED |%mode| 時間|%LED_time|秒 ポート|%pin|" group="たん体ＬＥＤ"
+  //% color="#ff7b00" weight=17 blockId=eureka_whiteselect block="単体LED |%mode| 時間|%LED_time|秒 ポート|%pin|ﾎﾟｰﾄ" group="たん体ＬＥＤ"
   export function eureka_whiteselect ( mode: onoff , LED_time:LED_wait , port:eureka_IO) {
     switch (port) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         if (mode == onoff.ON) {
             pins.digitalWritePin(DigitalPin.P0, 1);
             basic.pause(LED_time*200);
@@ -881,7 +881,7 @@ namespace eureka_blocks_soro {
             basic.pause(LED_time*200);
         return
         }
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         if (mode == onoff.ON) {
             pins.digitalWritePin(DigitalPin.P1, 1);
             basic.pause(LED_time*200);
@@ -891,7 +891,7 @@ namespace eureka_blocks_soro {
             basic.pause(LED_time*200);
         return
         }
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         if (mode == onoff.ON) {
             pins.digitalWritePin(DigitalPin.P2, 1);
             basic.pause(LED_time*200);
@@ -906,10 +906,10 @@ namespace eureka_blocks_soro {
 
 
 
-  //% color="#ff7b00" weight=17 blockId=eureka_white2 block="単体LED　点めつは|%mode|　ﾎﾟｰﾄ|%pin|" group="たん体ＬＥＤ"
+  //% color="#ff7b00" weight=17 blockId=eureka_white2 block="単体LED　点めつは|%mode| |%pin|ﾎﾟｰﾄ" group="たん体ＬＥＤ"
   export function eureka_white2(mode: LED_onoff ,port: eureka_IO ) {
     switch (port) {
-      case eureka_IO.Aﾎﾟｰﾄ:
+      case eureka_IO.A:
         pins.digitalWritePin(DigitalPin.P0, 1);
         basic.pause(mode);
         if (mode == 0){
@@ -920,7 +920,7 @@ namespace eureka_blocks_soro {
         return
         }
 
-      case eureka_IO.Bﾎﾟｰﾄ:
+      case eureka_IO.B:
         pins.digitalWritePin(DigitalPin.P1, 1);
         basic.pause(mode);
         if (mode == 0){
@@ -930,7 +930,7 @@ namespace eureka_blocks_soro {
         basic.pause(mode);
         return
         }
-      case eureka_IO.Cﾎﾟｰﾄ:
+      case eureka_IO.C:
         pins.digitalWritePin(DigitalPin.P2, 1);
         basic.pause(mode);
         if (mode == 0){
@@ -946,7 +946,7 @@ namespace eureka_blocks_soro {
 
 
 
-    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色で点めつは|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
+    //% color="#858585" weight=54 blockId=eureka_fullcolor block="ＬＥＤ |%color|色で点めつは|%mode| |%pin|ﾎﾟｰﾄ" group="フルカラーＬＥＤ"
     export function eureka_fullcolor(color:LED_color, mode:LED_onoff, pin: eureka_tlp) {
     switch (color) {
         case LED_color.赤:
@@ -1055,16 +1055,16 @@ namespace eureka_blocks_soro {
       }
     }
 
-    //% color="#4741f1" weight=53 blockId=eureka_tl_blue block="青 点とう|%mode| |%pin|" group="フルカラーＬＥＤ"
+    //% color="#4741f1" weight=53 blockId=eureka_tl_blue block="青 点とう|%mode| |%pin|ﾎﾟｰﾄ" group="フルカラーＬＥＤ"
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
-      case eureka_tlp.Aﾎﾟｰﾄ:
+      case eureka_tlp.A:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P14, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P14, 0);
         }
-      case eureka_tlp.Bﾎﾟｰﾄ:
+      case eureka_tlp.B:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P16, 1);
         } else {
@@ -1072,16 +1072,16 @@ namespace eureka_blocks_soro {
         }
     }
   }
-  //% color="#32cd32" weight=52 blockId=eureka_tl_green block="みどり 点とう|%mode| |%pin|" group="フルカラーＬＥＤ"
+  //% color="#32cd32" weight=52 blockId=eureka_tl_green block="みどり 点とう|%mode| |%pin|ﾎﾟｰﾄ" group="フルカラーＬＥＤ"
   export function eureka_tl_green(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
-      case eureka_tlp.Aﾎﾟｰﾄ:
+      case eureka_tlp.A:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P13, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P13, 0);
         }
-      case eureka_tlp.Bﾎﾟｰﾄ:
+      case eureka_tlp.B:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P15, 1);
         } else {
@@ -1089,16 +1089,16 @@ namespace eureka_blocks_soro {
         }
     }
   }
-  //% color="#ff4940" weight=51 blockId=eureka_tl_red block="赤 点とう|%mode| |%pin|" group="フルカラーＬＥＤ"
+  //% color="#ff4940" weight=51 blockId=eureka_tl_red block="赤 点とう|%mode| |%pin|ﾎﾟｰﾄ" group="フルカラーＬＥＤ"
   export function eureka_tl_red(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
-      case eureka_tlp.Aﾎﾟｰﾄ:
+      case eureka_tlp.A:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P0, 1);
         } else {
           return pins.digitalWritePin(DigitalPin.P0, 0);
         }
-      case eureka_tlp.Bﾎﾟｰﾄ:
+      case eureka_tlp.B:
         if (mode == onoff.ON) {
           return pins.digitalWritePin(DigitalPin.P1, 1);
         } else {
