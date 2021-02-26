@@ -224,8 +224,9 @@ namespace eureka_blocks {
   }
 
 
-  //% color="#a0522d"  weight=79 blockId=eureka_denkihumanLED block="人感ｾﾝｻの値を表示する" group="3_電気の利用ユニット"
+  //% color="#a0522d"  weight=79 blockId=eureka_denkihumanLED block="人感ｾﾝｻの値を表示する ﾎﾟｰﾄ|%pin|" group="3_電気の利用ユニット"
   export function eureka_denkihumanLED(pin: eureka_p1416) {
+
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
     pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
     switch (pin) {
