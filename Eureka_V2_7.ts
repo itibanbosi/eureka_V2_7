@@ -629,7 +629,7 @@ namespace eureka_blocks_soro {
   }
 
   //% color="#2a2aba" weight=30 blockId=sonar_ping block="超音波きょりｾﾝｻ　ﾎﾟｰﾄ|%pin| |%sonar_quality|" group="超音波距離センサー"
-  export function ping(pin: eureka_tlp,sonar_quality:sonar_avg): number {
+  export function ping(sonar_quality:sonar_avg,pin: eureka_tlp): number {
         if (sonar_quality　==sonar_avg.平均20回){
             sonar_quality=20
         }
@@ -842,7 +842,7 @@ namespace eureka_blocks_soro {
 
   //% color="#ff7b00" weight=54 blockId=eureka_white block="単体LED |%mode| ﾎﾟｰﾄ|%pin|" group="たん体ＬＥＤ"
 
-  export function eureka_white(port: eureka_IO, mode: onoff) {
+  export function eureka_white(mode: onoff,port: eureka_IO ) {
     switch (port) {
       case eureka_IO.A:
         if (mode == onoff.ON) {
