@@ -92,7 +92,7 @@ enum LED_wait {
     }
 
 
-//% color="#32cd32" weight=100 block="ふく合ﾕﾆｯﾄ2.72"
+//% color="#32cd32" weight=100 block="ふく合ﾕﾆｯﾄ2.73"
 
 namespace eureka_blocks {
 
@@ -1116,7 +1116,6 @@ namespace microbit_blocks {
   //% color="#228b22"  weight=82 blockId=microbit_denkiLED block="光ｾﾝｻの値を表示する" group="micro:bit純正"
   export function microbit_denkiLED(){
              basic.showNumber(Math.round(( input.lightLevel()/ 1023) * 100));
-        break;
   }
 
 
@@ -1124,12 +1123,11 @@ namespace microbit_blocks {
   //% color="#009A00"  weight=81 block="光ｾﾝｻ値 |%limit| より暗い" group="micro:bit純正"
   //% limit.min=0 limit.max=100
   export function microbit_decideLight(limit: number) {
-        if ((pins.analogReadPin(input.lightLevel() / 1023) * 100 < limit) {
+        if (pins.analogReadPin(input.lightLevel() / 1023) * 100 < limit) {            
           return true;
         } else {
           return false;
         }
-        break;
    }
 
 
