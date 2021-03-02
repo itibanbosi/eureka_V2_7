@@ -1115,15 +1115,15 @@ namespace microbit_blocks {
 
   //% color="#228b22"  weight=82 blockId=microbit_denkiLED block="光ｾﾝｻの値を表示する" group="micro:bit純正"
   export function microbit_denkiLED(){
-             basic.showNumber(Math.round(( input.lightLevel()/ 1023) * 100));
+             basic.showNumber(Math.round( input.lightLevel()));
   }
 
 
 
   //% color="#009A00"  weight=81 block="光ｾﾝｻ値 |%limit| より暗い" group="micro:bit純正"
-  //% limit.min=0 limit.max=100
+  //% limit.min=0 limit.max=1023
   export function microbit_decideLight(limit: number) {
-        if (pins.analogReadPin(input.lightLevel() / 1023) * 100 < limit) {            
+        if (input.lightLevel()  < limit) {            
           return true;
         } else {
           return false;
@@ -1135,7 +1135,7 @@ namespace microbit_blocks {
   //% color="#009A00"  weight=80 blockId=microbit_denkitemp block="光ｾﾝｻ値" group="micro:bit純正"
   export function microbit_denkitemp(): number {
 
-        return Math.round((input.lightLevel()/ 1023) * 100);
+        return Math.round(input.lightLevel());
 
   }
 
