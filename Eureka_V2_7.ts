@@ -1114,7 +1114,7 @@ namespace microbit_blocks {
 
   //% color="#009A00"  weight=81 block="光ｾﾝｻ値 |%limit| より暗い" group="micro:bit純正"
   //% limit.min=0 limit.max=255
-  export function microbit_decideLight(limit: number) {
+  export function microbit_decideLight(limit: number): boolean {
         if (input.lightLevel()  < limit) {            
           return true;
         } else {
@@ -1132,7 +1132,7 @@ namespace microbit_blocks {
   }
   //% color="#228b22"  weight=82 blockId=microbit_denkiLED block="光ｾﾝｻの値を表示する" group="micro:bit純正"
   export function microbit_denkiLED(){
-             basic.showNumber(input.lightLevel());
+             basic.showNumber(input.lightLevel())
   }
 
 }
