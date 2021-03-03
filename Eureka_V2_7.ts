@@ -1109,7 +1109,7 @@ namespace eureka_blocks_soro {
   }
 }
 
-
+/*
 
 //% color="#0000ff" weight=98 block="micro:bit上の明るさｾﾝｻｰ" 
 namespace microbit_blocks {
@@ -1132,6 +1132,8 @@ namespace microbit_blocks {
         return input.lightLevel();
 
   }
+
+
   //% color="#228b22"  weight=82 blockId=microbit_denkiLED block="光ｾﾝｻの値を表示する" group="micro:bit純正"
   export function microbit_denkiLED(){
              basic.showNumber(input.lightLevel());
@@ -1139,5 +1141,5 @@ namespace microbit_blocks {
 
 }
 
-
+*/
 
