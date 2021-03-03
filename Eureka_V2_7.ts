@@ -1107,6 +1107,7 @@ namespace eureka_blocks_soro {
         }
     }
   }
+}
 
 
 
@@ -1137,6 +1138,6 @@ namespace microbit_blocks {
   }
 
 }
-}
+
 
 
