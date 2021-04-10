@@ -92,7 +92,7 @@ enum LED_wait {
     }
 
 
-//% color="#32cd32" weight=100 block="ふく合ﾕﾆｯﾄ2.72"
+//% color="#32cd32" weight=100 block="ふく合ﾕﾆｯﾄ2.8"
 
 namespace eureka_blocks {
 
@@ -637,14 +637,17 @@ namespace eureka_blocks_soro {
         return Math.round(
           ((pins.analogReadPin(AnalogPin.P0) * 3250) / 1024 - 500) / 10
         );
+        break;
       case eureka_IO.B:
         return Math.round(
           ((pins.analogReadPin(AnalogPin.P1) * 3250) / 1024 - 500) / 10
         );
+        break;
       case eureka_IO.C:
         return Math.round(
           ((pins.analogReadPin(AnalogPin.P2) * 3250) / 1024 - 500) / 10
         );
+        break;
     }
   }
 
