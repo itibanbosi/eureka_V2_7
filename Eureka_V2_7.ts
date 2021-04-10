@@ -611,9 +611,6 @@ namespace eureka_blocks_soro {
     }
   }
 
-
-basic.showNumber(Math.round(dstemp.celsius(DigitalPin.P0)))
-
   //% color="#ff7b00" weight=32 blockId=eureka_tempDS block="温度ｾﾝｻDS ﾎﾟｰﾄ|%pin|" group="5_単体ユニットセンサー"
   //% advanced=true
   export function eureka_tempDS(pin: eureka_IO): number {
@@ -629,15 +626,6 @@ basic.showNumber(Math.round(dstemp.celsius(DigitalPin.P0)))
         );
     }
   }
-
-
-
-
-
-
-
-
-
 
 
 
