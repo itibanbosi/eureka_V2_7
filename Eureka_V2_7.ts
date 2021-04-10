@@ -1138,7 +1138,7 @@ namespace eureka_blocks_soro {
   }
 }
 
-
+/*
 
 //% color="#0000ff" weight=98 block="microbit上の明るさｾﾝｻｰ" 
 namespace microbit2_blocks {
@@ -1170,5 +1170,5 @@ namespace microbit2_blocks {
 
 }
 
-
+*/
 
