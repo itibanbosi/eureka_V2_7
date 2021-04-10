@@ -284,6 +284,8 @@ namespace eureka_blocks {
     }
   }
 }
+
+
 //% color="#0000ff" weight=98 block="たん体ﾕﾆｯﾄ" 
 
 namespace eureka_blocks_soro {
@@ -482,6 +484,7 @@ namespace eureka_blocks_soro {
           pins.digitalWritePin(DigitalPin.P13, 0);
           pins.digitalWritePin(DigitalPin.P14, 0);
         }
+        break;
       case eureka_denki.B:
         if (mode == moter_d.両方前) {
           pins.digitalWritePin(DigitalPin.P1, 1);
@@ -518,6 +521,7 @@ namespace eureka_blocks_soro {
           pins.digitalWritePin(DigitalPin.P15, 0);
           pins.digitalWritePin(DigitalPin.P16, 0);
         }
+        break;
     }
   }
 
@@ -618,12 +622,15 @@ namespace eureka_blocks_soro {
       case eureka_IO.A:
         return Math.round(dstemp.celsius(DigitalPin.P0)  
         );
+        break;
       case eureka_IO.B:
         return Math.round(dstemp.celsius(DigitalPin.P1)
         );
+        break;
       case eureka_IO.C:
         return Math.round(dstemp.celsius(DigitalPin.P2)
         );
+        break;
     }
   }
 
