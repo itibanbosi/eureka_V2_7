@@ -1068,7 +1068,7 @@ namespace eureka_blocks_soro {
         basic.pause(mode);
         return
         }
-            case LED_color.白:
+        case LED_color.白:
         pins.digitalWritePin(DigitalPin.P0, 1);
         pins.digitalWritePin(DigitalPin.P13, 1);
         pins.digitalWritePin(DigitalPin.P14, 1);
@@ -1102,6 +1102,7 @@ namespace eureka_blocks_soro {
         }
     }
   }
+ 
   //% color="#32cd32" weight=52 blockId=eureka_full_green block="みどり 点とう|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
   export function eureka_full_green(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
@@ -1119,6 +1120,7 @@ namespace eureka_blocks_soro {
         }
     }
   }
+
   //% color="#ff4940" weight=51 blockId=eureka_full_red block="赤 点とう|%mode| ﾎﾟｰﾄ|%pin|" group="フルカラーＬＥＤ"
   export function eureka_full_red(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
@@ -1138,7 +1140,7 @@ namespace eureka_blocks_soro {
   }
 }
 
-/*
+
 
 //% color="#0000ff" weight=98 block="microbit上の明るさｾﾝｻｰ" 
 namespace microbit2_blocks {
@@ -1170,5 +1172,5 @@ namespace microbit2_blocks {
 
 }
 
-*/
+
 
