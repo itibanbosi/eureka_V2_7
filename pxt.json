@@ -5,7 +5,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "microbit-dstemp": "github:bsiever/microbit-dstemp#v0.1.20"
     },
     "files": [
         "README.md",

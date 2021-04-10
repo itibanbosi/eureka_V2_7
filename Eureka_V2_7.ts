@@ -610,6 +610,37 @@ namespace eureka_blocks_soro {
         return pins.digitalReadPin(DigitalPin.P2);
     }
   }
+
+
+basic.showNumber(Math.round(dstemp.celsius(DigitalPin.P0)))
+
+  //% color="#ff7b00" weight=32 blockId=eureka_tempDS block="温度ｾﾝｻDS ﾎﾟｰﾄ|%pin|" group="5_単体ユニットセンサー"
+  //% advanced=true
+  export function eureka_tempDS(pin: eureka_IO): number {
+    switch (pin) {
+      case eureka_IO.A:
+        return Math.round(dstemp.celsius(DigitalPin.P0)  
+        );
+      case eureka_IO.B:
+        return Math.round(dstemp.celsius(DigitalPin.P1)
+        );
+      case eureka_IO.C:
+        return Math.round(dstemp.celsius(DigitalPin.P2)
+        );
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
   //% color="#ff7b00" weight=32 blockId=eureka_temp block="温度ｾﾝｻMCP ﾎﾟｰﾄ|%pin|" group="5_単体ユニットセンサー"
   //% advanced=true
   export function eureka_temp(pin: eureka_IO): number {
