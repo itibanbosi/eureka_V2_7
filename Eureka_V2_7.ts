@@ -1165,7 +1165,7 @@ namespace microbit2_blocks {
   }
 
 
-  //% color="#228b22"  weight=82 blockId=microbit_denkiLED block="光ｾﾝｻの値を表示する" group="microbit純正"
+  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="microbit純正"
   export function microbit2_denkiLED(){
              basic.showNumber(input.lightLevel());
   }
