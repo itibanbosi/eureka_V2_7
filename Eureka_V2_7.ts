@@ -1109,7 +1109,7 @@ namespace eureka_blocks_soro {
 }
 
 
-
+//% color="#0000ff" weight=98 block="micro:bit上のLED" 
 
 namespace microbit2_blocks {
 
