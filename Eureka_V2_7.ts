@@ -1147,7 +1147,7 @@ namespace microbit2_blocks {
 
   //% color="#009A00"  weight=81 block="光ｾﾝｻ値 |%limit| より暗い" group="microbit純正"
   //% limit.min=0 limit.max=255
-  export function microbit2_decideLight(limit: number) {
+  export function microbit2_decideLight(limit: number) :boolean{
         if (input.lightLevel()  < limit) {            
           return true;
         } else {
