@@ -93,7 +93,7 @@ enum LED_wait {
 
 
 //% color="#32cd32" weight=100 block="ふく合ﾕﾆｯﾄ2.8"
-/*
+
 namespace eureka_blocks {
 
     //% blockId=eureka_buz_set
@@ -284,7 +284,7 @@ namespace eureka_blocks {
     }
   }
 }
-/*
+
 
 //% color="#0000ff" weight=98 block="たん体ﾕﾆｯﾄ" 
 
@@ -658,7 +658,7 @@ namespace eureka_blocks_soro {
     }
   }
 
-  //% color="#2a2aba" weight=30 blockId=sonar_ping block="超音波きょりｾﾝｻ |%sonar_quality| ﾎﾟｰﾄ|%pin|" group="超音波距離センサー"
+   //% color="#2a2aba" weight=30 blockId=sonar_ping block="超音波きょりｾﾝｻ |%sonar_quality| ﾎﾟｰﾄ|%pin|" group="超音波距離センサー"
   export function ping(sonar_quality:sonar_avg,pin: eureka_tlp): number {
         if (sonar_quality　==sonar_avg.平均20回){
             sonar_quality=20
@@ -707,48 +707,6 @@ namespace eureka_blocks_soro {
         return Math.round(Math.idiv(d2/sonar_quality, 58)*1.5);
     }
   }
-
-/*
-  //% color="#2a2aba" weight=28 blockId=sonar_ping_3 block="きょりが |%limit| cmより |%nagasa| ﾎﾟｰﾄ|%pin|" group="超音波距離センサー"
-  //% limit.min=0 limit.max=50
-  export function sonar_ping_3(limit: number ,nagasa:kyori,pin: eureka_tlp) {
-    let  d1=0;
-    let  d2=0;
-    if  (pin=="Aﾎﾟｰﾄ") {
-
-
-
-        for ( let i=0 ; i<20 ; i++ ){
-        // send
-        basic.pause(5);
-        pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
-        pins.digitalWritePin(DigitalPin.P13, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(DigitalPin.P13, 1);
-        control.waitMicros(10);
-        pins.digitalWritePin(DigitalPin.P13, 0);
-        // read
-        d1 = pins.pulseIn(DigitalPin.P14, PulseValue.High, 500 * 58);
-        d2= d1+d2;
-        }
-        switch(nagasa){
-            case kyori.短い:
-                if (Math.idiv(d2/20, 58) * 1.5 < limit) {
-                return true;
-                } else {
-                return false;
-                }
-            case kyori.長い:
-                if (Math.idiv(d2/20, 58) * 1.5 < limit) {
-                return false;
-                } else {
-                return true;
-            }
-        }
-    }
-    }
-
-
 
 
  //% color="#2a2aba" weight=27 blockId=sonar_ping_3 block="きょりが |%limit| cmより長い ﾎﾟｰﾄ|%pin|" group="超音波距離センサー"
@@ -854,6 +812,16 @@ namespace eureka_blocks_soro {
 
             }
         }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1172,5 +1140,5 @@ namespace microbit2_blocks {
 
 }
 
-*/
+
 
