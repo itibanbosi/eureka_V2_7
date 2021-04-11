@@ -620,6 +620,7 @@ namespace eureka_blocks_soro {
   export function eureka_tempDS(pin: eureka_IO): number {
     switch (pin) {
       case eureka_IO.A:
+        eureka_blocks.eureka_buz_set()
         return Math.round(dstemp.celsius(DigitalPin.P0)  
         );
         break;
