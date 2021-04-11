@@ -1157,7 +1157,7 @@ namespace microbit2_blocks {
 
 
 
-  //% color="#009A00"  weight=80 blockId=microbit_denkitemp block="光ｾﾝｻ値" group="microbit純正"
+  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="microbit純正"
   export function microbit2_denkitemp():number{
 
         return input.lightLevel();
