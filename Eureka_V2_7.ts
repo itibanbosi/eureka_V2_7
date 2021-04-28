@@ -1108,7 +1108,7 @@ namespace eureka_blocks_soro {
         }
     }
   }
-  //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="光ｾﾝｻ値 |%limit| より暗い" group="microbit純正"
+  //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="光ｾﾝｻ値 |%limit| より暗い" group="microbit上の光ｾﾝｻ"
   //% limit.min=0 limit.max=255
   export function microbit2_decideLight(limit: number) :boolean{
         if (input.lightLevel()  < limit) {            
@@ -1120,7 +1120,7 @@ namespace eureka_blocks_soro {
 
 
 
-  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="microbit純正"
+  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="microbit上の光ｾﾝｻ"
   export function microbit2_denkitemp():number{
 
         return input.lightLevel();
@@ -1128,7 +1128,7 @@ namespace eureka_blocks_soro {
   }
 
 
-  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="microbit純正"
+  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="microbit上の光ｾﾝｻ"
   export function microbit2_denkiLED(){
             basic.showNumber(input.lightLevel());
   }
@@ -1201,40 +1201,3 @@ namespace newio_blocks {
 
 
 
-
-
-
-/*
-
-//% color="#ff4500" weight=98 block="micro:bit上のLED" 
-
-namespace microbit2_blocks {
-
-  //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="光ｾﾝｻ値 |%limit| より暗い" group="microbit純正"
-  //% limit.min=0 limit.max=255
-  export function microbit2_decideLight(limit: number) :boolean{
-        if (input.lightLevel()  < limit) {            
-          return true;
-        } else {
-          return false;
-        }
-   }
-
-
-
-  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="microbit純正"
-  export function microbit2_denkitemp():number{
-
-        return input.lightLevel();
-
-  }
-
-
-  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="microbit純正"
-  export function microbit2_denkiLED(){
-            basic.showNumber(input.lightLevel());
-  }
-
-}
-
-*/
