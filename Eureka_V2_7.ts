@@ -1145,12 +1145,12 @@ namespace newio_blocks {
     export function neopixel_yellow_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
-        io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Yellow))
+        io_neo.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
         io_neo.show()
         break;
                 
       case onoff.OFF:
-         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+         io_neo.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
          io_neo.show()
         break;
     }
@@ -1160,12 +1160,12 @@ namespace newio_blocks {
     export function neopixel_red_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
-        io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
+        io_neo.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
         io_neo.show()
         break;
                 
       case onoff.OFF:
-         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+         io_neo.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
          io_neo.show()
         break;
     }
