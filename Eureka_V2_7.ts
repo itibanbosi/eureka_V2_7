@@ -91,7 +91,8 @@ enum LED_wait {
     two,
     }
 
-
+    let strip = neopixel.create(DigitalPin.P9, 4, NeoPixelMode.RGB);
+    
 //% color="#32cd32" weight=100 block="ふく合ﾕﾆｯﾄ2.8"
 
 namespace eureka_blocks {
