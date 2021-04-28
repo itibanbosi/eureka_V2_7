@@ -1109,6 +1109,89 @@ namespace eureka_blocks_soro {
   }
 }
 
+//% color="#ff4500" weight=99 block="イーオ専用"
+
+namespace newio_blocks {
+
+    //% blockId=newio_first
+    //% block="ｲｰｵのﾈｵﾋﾟｸｾﾙLEDを使う"
+    // group="1_初期設定"
+    //% color="#ff3d03"
+    //% weight=90
+
+    export function newio_first() {
+    let strip = neopixel.create(DigitalPin.P9, 4, NeoPixelMode.RGB)
+  }
+
+
+
+    //% color="#4741f1" weight=89 blockId=neopixel_blue block="青信号 点灯|%mode|" group="2_信号機ユニット"
+    export function neopixel_blue_block(mode: onoff) {
+    switch (mode) {
+      case  onoff.ON :
+        strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Blue))
+        strip.show()
+        break;
+                
+      case onoff.OFF:
+         strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+         strip.show()
+        break;
+    }
+  }
+/*
+  //% color="#ffa800" weight=87 blockId=neopixel__yellow block="黄信号 点灯|%mode|" group="2_信号機ユニット"
+  export function eureka_tl_yellow(mode: onoff) {
+    switch (pin) {
+      case eureka_tlp.A:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P13, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P13, 0);
+        }
+      case eureka_tlp.B:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P15, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P15, 0);
+        }
+    }
+  }
+  //% color="#ff4940" weight=85 blockId=neopixel_red block="赤信号 点灯|%mode|" group="2_信号機ユニット"
+  export function eureka_tl_red(mode: onoff) {
+    switch (pin) {
+      case eureka_tlp.A:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P0, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P0, 0);
+        }
+      case eureka_tlp.B:
+        if (mode == onoff.ON) {
+          return pins.digitalWritePin(DigitalPin.P1, 1);
+        } else {
+          return pins.digitalWritePin(DigitalPin.P1, 0);
+        }
+    }
+  }
+
+  //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="2_信号機ユニット"
+  //% second.min=0 second.max=10
+  export function driveForwards(second: number): void {
+    basic.pause(second * 1000);
+  }
+*/
+
+}
+
+
+
+
+
+
+
+
+
 
 //% color="#ff4500" weight=98 block="micro:bit上のLED" 
 
@@ -1140,6 +1223,4 @@ namespace microbit2_blocks {
   }
 
 }
-
-
 
