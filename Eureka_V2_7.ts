@@ -1140,6 +1140,54 @@ namespace newio_blocks {
         break;
     }
   }
+
+    //% color="#4741f1" weight=89 blockId=neopixel_yellow block="黄信号 点灯|%mode|" group="2_信号機ユニット"
+    export function neopixel_yellow_block(mode: onoff) {
+    switch (mode) {
+      case  onoff.ON :
+        io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Yellow))
+        io_neo.show()
+        break;
+                
+      case onoff.OFF:
+         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+         io_neo.show()
+        break;
+    }
+  }
+
+    //% color="#4741f1" weight=89 blockId=neopixel_red block="赤信号 点灯|%mode|" group="2_信号機ユニット"
+    export function neopixel_red_block(mode: onoff) {
+    switch (mode) {
+      case  onoff.ON :
+        io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
+        io_neo.show()
+        break;
+                
+      case onoff.OFF:
+         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+         io_neo.show()
+        break;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
   //% color="#ffa800" weight=87 blockId=neopixel__yellow block="黄信号 点灯|%mode|" group="2_信号機ユニット"
   export function eureka_tl_yellow(mode: onoff) {
