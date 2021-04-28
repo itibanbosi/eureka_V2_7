@@ -1110,13 +1110,13 @@ namespace eureka_blocks_soro {
   }
 }
 
-//% color="#ff4500" weight=99 block="イーオ専用"
+//% color="#ff4500" weight=99 block="iːo専用"
 
 namespace newio_blocks {
 
 
 
-    //% color="#4741f1" weight=89 blockId=neopixel_blue block="青信号 点灯|%mode|" group="2_信号機ユニット"
+    //% color="#4741f1" weight=89 blockId=neopixel_blue block="iːo青信号 点灯|%mode|" group="1_信号機ユニット"
     export function neopixel_blue_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1131,7 +1131,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#ffa800" weight=86 blockId=neopixel_yellow block="黄信号 点灯|%mode|" group="2_信号機ユニット"
+    //% color="#ffa800" weight=86 blockId=neopixel_yellow block="iːo黄信号 点灯|%mode|" group="1_信号機ユニット"
     export function neopixel_yellow_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1146,7 +1146,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#ff4940" weight=84 blockId=neopixel_red block="赤信号 点灯|%mode|" group="2_信号機ユニット"
+    //% color="#ff4940" weight=84 blockId=neopixel_red block="iːo赤信号 点灯|%mode|" group="1_信号機ユニット"
     export function neopixel_red_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1159,6 +1159,11 @@ namespace newio_blocks {
          io_neo.show()
         break;
     }
+  }
+  //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="1_信号機ユニット"
+  //% second.min=0 second.max=10
+  export function driveForwards(second: number): void {
+    basic.pause(second * 1000);
   }
 
 
