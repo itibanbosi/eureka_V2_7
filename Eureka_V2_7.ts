@@ -91,7 +91,7 @@ enum LED_wait {
     two,
     }
 
-    let strip = neopixel.create(DigitalPin.P9, 4, NeoPixelMode.RGB);
+    let io_neo = neopixel.create(DigitalPin.P9, 4, NeoPixelMode.RGB);
     
 //% color="#32cd32" weight=100 block="ふく合ﾕﾆｯﾄ2.8"
 
@@ -1130,13 +1130,13 @@ namespace newio_blocks {
     export function neopixel_blue_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
-        strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Blue))
-        strip.show()
+        io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Blue))
+        io_neo.show()
         break;
                 
       case onoff.OFF:
-         strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-         strip.show()
+         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+         io_neo.show()
         break;
     }
   }
