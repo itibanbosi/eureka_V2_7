@@ -1141,7 +1141,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#4741f1" weight=89 blockId=neopixel_yellow block="黄信号 点灯|%mode|" group="2_信号機ユニット"
+    //% color="#ffa800" weight=89 blockId=neopixel_yellow block="黄信号 点灯|%mode|" group="2_信号機ユニット"
     export function neopixel_yellow_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1156,7 +1156,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#4741f1" weight=89 blockId=neopixel_red block="赤信号 点灯|%mode|" group="2_信号機ユニット"
+    //% color="#ff4940" weight=89 blockId=neopixel_red block="赤信号 点灯|%mode|" group="2_信号機ユニット"
     export function neopixel_red_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
