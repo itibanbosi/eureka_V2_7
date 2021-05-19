@@ -1,19 +1,19 @@
 enum eureka_IO {
-  A,
   B,
+  A,
   C,
 }
 enum eureka_denki {
-  A,
   B,
+  A,
 }
 enum eureka_tlp {
-  A,
   B,
+  A,
 }
 enum eureka_p1416 {
-  A,
   B,
+  A,
 }
 enum onoff {
   ON,
