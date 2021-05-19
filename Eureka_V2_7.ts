@@ -1122,33 +1122,6 @@ namespace eureka_blocks_soro {
         }
     }
   }
-  //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="光ｾﾝｻ値 |%limit| より暗い" group="microbit上の光ｾﾝｻ"
-  //% limit.min=0 limit.max=100
-  export function microbit2_decideLight(limit: number) :boolean{
-        if (input.lightLevel()/255*100  < limit) {            
-          return true;
-        } else {
-          return false;
-        }
-   }
-
-
-
-  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="microbit上の光ｾﾝｻ"
-  export function microbit2_denkitemp():number{
-
-        return input.lightLevel()/255*100;
-
-  }
-
-
-  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="microbit上の光ｾﾝｻ"
-  export function microbit2_denkiLED(){
-            basic.showNumber(input.lightLevel()/255*100);
-  }
-
-
-
 
 }
 
