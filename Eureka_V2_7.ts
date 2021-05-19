@@ -115,7 +115,7 @@ namespace eureka_blocks {
     //% block=ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす
     // group="1_初期設定"
     //% color="#ff3d03"
-    //% weight=92
+    //% weight=94
 
     export function eureka_buz_set() {
     pins.analogSetPitchPin(AnalogPin.P8);
@@ -301,7 +301,7 @@ namespace eureka_blocks {
 }
 
 
-//% color="#0000ff" weight=91 block="たん体ﾕﾆｯﾄ" 
+//% color="#0000ff" weight=93 block="たん体ﾕﾆｯﾄ" 
 
 namespace eureka_blocks_soro {
 
