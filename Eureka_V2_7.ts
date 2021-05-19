@@ -1125,7 +1125,7 @@ namespace eureka_blocks_soro {
 
 }
 
-//% color="#ff4500" weight=99 block="iːo(ｲｰｵ)専用"
+//% color="#ff4500" weight=89 block="iːo(ｲｰｵ)専用"
 
 namespace newio_blocks {
 
