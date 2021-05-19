@@ -1217,7 +1217,7 @@ namespace newio_blocks {
        basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
   }
 
-  //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="光ｾﾝｻ値 |%limit| より暗い" group="microbitの光ｾﾝｻ"
+  //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="光ｾﾝｻ値 |%limit| より暗い" group="3 microbitの光ｾﾝｻ"
   //% limit.min=0 limit.max=255
   export function microbit2_decideLight(limit: number) :boolean{
         if (input.lightLevel()  < limit) {            
@@ -1229,7 +1229,7 @@ namespace newio_blocks {
 
 
 
-  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="microbitの光ｾﾝｻ"
+  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="3 microbitの光ｾﾝｻ"
   export function microbit2_denkitemp():number{
 
         return input.lightLevel();
@@ -1237,15 +1237,28 @@ namespace newio_blocks {
   }
 
 
-  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="microbitの光ｾﾝｻ"
+  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="3 microbitの光ｾﾝｻ"
   export function microbit2_denkiLED(){
             basic.showNumber(input.lightLevel());
   }
 
 
-
-
-
+  //% color="#a9a9a9" weight=58 blockId=IO_relay block="ﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode|" group="4 リレー"
+  export function IO_relay(mode: onoff) {
+    switch (mode) {
+      case onoff.ON:{
+          return pins.digitalWritePin(DigitalPin.P8, 1);
+        } 
+      case onoff.OFF: {
+           return pins.digitalWritePin(DigitalPin.P8, 0);
+        }
+    }
+  }
+  //% color="#a9a9a9" weight=56 blockId=IO_relay_2 block="ﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%syuturyoku|" group="4 リレー"
+  //% syuturyoku.min=0 syuturyoku.max=1023
+  export function IO_relay_2(syuturyoku: number) {
+        return pins.analogWritePin(AnalogPin.P8, syuturyoku);
+  }
 
 }
 
