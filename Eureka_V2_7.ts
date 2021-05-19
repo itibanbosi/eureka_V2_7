@@ -1210,7 +1210,7 @@ namespace newio_blocks {
         return pins.digitalReadPin(DigitalPin.P14);
   }
 
-  //% color="#a0522d"  weight=79 blockId=IO_human_DISP block="人感ｾﾝｻの値を表示する ﾎﾟｰﾄ|%pin|" group="2 iːo人感センサー"
+  //% color="#858585"  weight=79 blockId=IO_human_DISP block="人感ｾﾝｻの値を表示する ﾎﾟｰﾄ|%pin|" group="2 iːo人感センサー"
   export function IO_human_DISP() {
 
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
