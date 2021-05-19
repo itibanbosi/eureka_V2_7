@@ -68,6 +68,7 @@ enum LED_color {
     むらさき,
     白,
 }
+
 enum LED_wait {
     //% block="えらぶ",
     zero,
@@ -1144,7 +1145,7 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1" weight=89 blockId=neopixel_blue block="iːo青信号 点灯|%mode|" group="1 iːoネオピクセル"
+    //% color="#4741f1" weight=89 blockId=neopixel_blue block="青信号 点灯|%mode|" group="1 iːoネオピクセル"
     export function neopixel_blue_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1159,7 +1160,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#ffa800" weight=86 blockId=neopixel_yellow block="iːo黄信号 点灯|%mode|" group="1 iːoネオピクセル"
+    //% color="#ffa800" weight=86 blockId=neopixel_yellow block="黄信号 点灯|%mode|" group="1 iːoネオピクセル"
     export function neopixel_yellow_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1174,7 +1175,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#ff4940" weight=84 blockId=neopixel_red block="iːo赤信号 点灯|%mode|" group="1 iːoネオピクセル"
+    //% color="#ff4940" weight=84 blockId=neopixel_red block="赤信号 点灯|%mode|" group="1 iːoネオピクセル"
     export function neopixel_red_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1188,11 +1189,32 @@ namespace newio_blocks {
         break;
     }
   }
+ 
+    //% color="#ff4940" weight=84 blockId=neopixel_select block="ﾌﾙｶﾗｰLED |neo_color|色で |neo_number|個つける" group="1 iːoネオピクセル"
+    export function neopixel_select_block(neo_color: LED_color,neo_number:number) {
+    switch (neo_color){
+        case LED_color.き :
+        for (let n=0 ; n <= neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Yellow))            
+        } 
+        io_neo.show()
+        break;                
+        case LED_color.みどり :
+        for (let n=0 ; n <= neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Green))            
+        } 
+        io_neo.show()
+        break;    
+    }
+  }
+
+
   //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="1 iːoネオピクセル"
   //% second.min=0 second.max=10
   export function driveForwards(second: number): void {
     basic.pause(second * 1000);
   }
+
 
   //% color="#a0522d" weight=36 block="人が動いたら" group="2 iːo人感センサー"
   export function IO_humanDetection(): boolean {
@@ -1243,7 +1265,7 @@ namespace newio_blocks {
   }
 
 
-  //% color="#a9a9a9" weight=58 blockId=IO_relay block="ﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode|" group="4 リレー"
+  //% color="#a9a9a9" weight=58 blockId=IO_relay block="ﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode|" group="4 iːoリレー"
   export function IO_relay(mode: onoff) {
     switch (mode) {
       case onoff.ON:{
@@ -1254,7 +1276,7 @@ namespace newio_blocks {
         }
     }
   }
-  //% color="#a9a9a9" weight=56 blockId=IO_relay_2 block="ﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%syuturyoku|" group="4 リレー"
+  //% color="#a9a9a9" weight=56 blockId=IO_relay_2 block="ﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%syuturyoku|" group="4 iːoリレー"
   //% syuturyoku.min=0 syuturyoku.max=1023
   export function IO_relay_2(syuturyoku: number) {
         return pins.analogWritePin(AnalogPin.P8, syuturyoku);
