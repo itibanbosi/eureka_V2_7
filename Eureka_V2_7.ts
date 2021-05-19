@@ -1298,7 +1298,7 @@ namespace newio_blocks {
   //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="3 microbitの光ｾﾝｻ"
   export function microbit2_denkitemp():number{
 
-        return input.lightLevel()/254*100;
+        return Math.round(input.lightLevel()/254*100);
 
   }
 
