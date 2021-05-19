@@ -69,6 +69,19 @@ enum LED_color {
     白,
 }
 
+enum neoLED_color {
+    赤,
+    だいだい,
+    黄,
+    緑,
+    青,
+    あい,
+    すみれ,
+    紫,
+    白,
+    黒,
+}
+
 enum LED_wait {
     //% block="えらぶ",
     zero,
@@ -1191,20 +1204,68 @@ namespace newio_blocks {
   }
  
     //% color="#ff4940" weight=84 blockId=neopixel_select block="ﾌﾙｶﾗｰLED |%neo_color| 色で |%neo_number|個つける" group="1 iːoネオピクセル"
-    export function neopixel_select_block(neo_color: LED_color,neo_number:number) {
+    export function neopixel_select_block(neo_color: neoLED_color,neo_number:number) {
     switch (neo_color){
-        case LED_color.き :
-        for (let n=0 ; n <= neo_number;n++){
+        case neoLED_color.赤 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Red))            
+        } 
+        io_neo.show()
+        break;                
+        case neoLED_color.だいだい :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Orange))            
+        } 
+        io_neo.show()
+        break;    
+        case neoLED_color.黄 :
+        for (let n=0 ; n < neo_number;n++){
         io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Yellow))            
         } 
         io_neo.show()
         break;                
-        case LED_color.みどり :
-        for (let n=0 ; n <= neo_number;n++){
+        case neoLED_color.緑 :
+        for (let n=0 ; n < neo_number;n++){
         io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Green))            
         } 
         io_neo.show()
-        break;    
+        break;
+        case neoLED_color.青 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Blue))            
+        } 
+        io_neo.show()
+        break;                
+        case neoLED_color.あい :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Indigo))            
+        } 
+        io_neo.show()
+        break;
+        case neoLED_color.すみれ :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Violet))            
+        } 
+        io_neo.show()
+        break;                
+        case neoLED_color.紫 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Purple))            
+        } 
+        io_neo.show()
+        break;
+        case neoLED_color.白 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.White))            
+        } 
+        io_neo.show()
+        break;                
+        case neoLED_color.黒 :
+        for (let n=0 ; n < neo_number;n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Black))            
+        } 
+        io_neo.show()
+        break;
     }
   }
 
