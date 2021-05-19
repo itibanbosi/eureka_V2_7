@@ -1194,7 +1194,7 @@ namespace newio_blocks {
     basic.pause(second * 1000);
   }
 
-  //% color="#858585" weight=36 block="人が動いたら" group="2 iːo人感センサー"
+  //% color="#a0522d" weight=36 block="人が動いたら" group="2 iːo人感センサー"
   export function IO_humanDetection(): boolean {
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P14) == 1) {
@@ -1204,13 +1204,13 @@ namespace newio_blocks {
         }
   }
  
-  //% color="#858585" weight=34 blockId=IO_human block="人感ｾﾝｻ値" group="2 iːo人感センサー"
+  //% color="#a0522d" weight=34 blockId=IO_human block="人感ｾﾝｻ値" group="2 iːo人感センサー"
     export function IO_human(): number {
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
         return pins.digitalReadPin(DigitalPin.P14);
   }
 
-  //% color="#858585"  weight=79 blockId=IO_human_DISP block="人感ｾﾝｻの値を表示する ﾎﾟｰﾄ|%pin|" group="2 iːo人感センサー"
+  //% color="#a0522d"  weight=79 blockId=IO_human_DISP block="人感ｾﾝｻの値を表示する ﾎﾟｰﾄ|%pin|" group="2 iːo人感センサー"
   export function IO_human_DISP() {
 
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
