@@ -1270,6 +1270,15 @@ namespace newio_blocks {
     }
   }
 
+    //% color="#cd853f" weight=80 blockId=neopixel_erace block="ﾌﾙｶﾗｰLEDを全部消す" group="1 iːoネオピクセル"
+    export function neopixel_erace_block() {
+        for (let n=0 ; n < 4 ; n++){
+        io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Black))            
+        } 
+        io_neo.show()
+    }
+
+
 
   //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="1 iːoネオピクセル"
   //% second.min=0 second.max=10
