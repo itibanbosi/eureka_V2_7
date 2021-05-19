@@ -1144,7 +1144,7 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1" weight=89 blockId=neopixel_blue block="iːo青信号 点灯|%mode|" group="1_iːoネオピクセル"
+    //% color="#4741f1" weight=89 blockId=neopixel_blue block="iːo青信号 点灯|%mode|" group="1 iːoネオピクセル"
     export function neopixel_blue_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1159,7 +1159,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#ffa800" weight=86 blockId=neopixel_yellow block="iːo黄信号 点灯|%mode|" group="1_iːoネオピクセル"
+    //% color="#ffa800" weight=86 blockId=neopixel_yellow block="iːo黄信号 点灯|%mode|" group="1 iːoネオピクセル"
     export function neopixel_yellow_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1174,7 +1174,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#ff4940" weight=84 blockId=neopixel_red block="iːo赤信号 点灯|%mode|" group="1_iːoネオピクセル"
+    //% color="#ff4940" weight=84 blockId=neopixel_red block="iːo赤信号 点灯|%mode|" group="1 iːoネオピクセル"
     export function neopixel_red_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1188,14 +1188,13 @@ namespace newio_blocks {
         break;
     }
   }
-  //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="1_iːoネオピクセル"
+  //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="1 iːoネオピクセル"
   //% second.min=0 second.max=10
   export function driveForwards(second: number): void {
     basic.pause(second * 1000);
   }
 
-  //% color="#858585" weight=36 block="iːo 人が動いたら" group="2_iːo人感センサー"
-  //% advanced=true
+  //% color="#858585" weight=36 block="iːo 人が動いたら" group="2 iːo人感センサー"
   export function IO_humanDetection(): boolean {
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P14) == 1) {
@@ -1205,11 +1204,17 @@ namespace newio_blocks {
         }
   }
  
-  //% color="#858585" weight=34 blockId=IO_human block="iːo_人感ｾﾝｻ値" group="2_iːo人感センサー"
-  //% advanced=true
+  //% color="#858585" weight=34 blockId=IO_human block="人感ｾﾝｻ値" group="2 iːo人感センサー"
     export function IO_human(): number {
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
         return pins.digitalReadPin(DigitalPin.P14);
+  }
+
+  //% color="#a0522d"  weight=79 blockId=IO_human_DISP block="人感ｾﾝｻの値を表示する ﾎﾟｰﾄ|%pin|" group="2 iːo人感センサー"
+  export function IO_human_DISP() {
+
+    pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
+       basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
   }
 
 
