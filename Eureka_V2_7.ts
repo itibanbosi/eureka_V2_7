@@ -70,15 +70,15 @@ enum LED_color {
 }
 
 enum neoLED_color {
+    白,
     赤,
-    だいだい,
     黄,
     緑,
     青,
+    だいだい,
     あい,
     すみれ,
     紫,
-    白,
     黒,
 }
 
