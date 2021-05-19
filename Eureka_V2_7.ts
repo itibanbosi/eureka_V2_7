@@ -1204,8 +1204,9 @@ namespace newio_blocks {
   }
  
     //% color="#ff4940" weight=84 blockId=neopixel_select block="ﾌﾙｶﾗｰLED |%neo_color| 色で |%neo_number|個つける" group="1 iːoネオピクセル"
+    //% neo_number.min=1 neo_number.limit.max=4
     export function neopixel_select_block(neo_color: neoLED_color,neo_number:number) {
-  //% neo_number.min=1 neo_number.max=4
+
     switch (neo_color){
         case neoLED_color.赤 :
         for (let n=0 ; n < neo_number;n++){
