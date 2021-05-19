@@ -1336,7 +1336,7 @@ namespace newio_blocks {
   }
 
 
-  //% color="#696969" weight=58 blockId=IO_relay block="ﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode|" group="4 iːoリレー"
+  //% color="#696969" weight=58 blockId=IO_relay block="ﾘﾚｰ(ﾃﾞｼﾞﾀﾙ) |%mode|" group="4 iːoリレー"
   export function IO_relay(mode: onoff) {
     switch (mode) {
       case onoff.ON:{
@@ -1347,7 +1347,7 @@ namespace newio_blocks {
         }
     }
   }
-  //% color="#696969" weight=56 blockId=IO_relay_2 block="ﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%syuturyoku|" group="4 iːoリレー"
+  //% color="#696969" weight=56 blockId=IO_relay_2 block="ﾘﾚｰ(ｱﾅﾛｸﾞ) |%syuturyoku|" group="4 iːoリレー"
   //% syuturyoku.min=0 syuturyoku.max=1023
   export function IO_relay_2(syuturyoku: number) {
         return pins.analogWritePin(AnalogPin.P8, syuturyoku);
