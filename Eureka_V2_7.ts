@@ -1294,7 +1294,7 @@ namespace newio_blocks {
         return pins.digitalReadPin(DigitalPin.P14);
   }
 
-  //% color="#a0522d"  weight=79 blockId=IO_human_DISP block="人感ｾﾝｻの値を表示する ﾎﾟｰﾄ|%pin|" group="2 iːo人感センサー"
+  //% color="#a0522d"  weight=79 blockId=IO_human_DISP block="人感ｾﾝｻの値を表示する" group="2 iːo人感センサー"
   export function IO_human_DISP() {
 
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
@@ -1323,11 +1323,11 @@ namespace newio_blocks {
 
   //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="3 microbitの光ｾﾝｻ"
   export function microbit2_denkiLED(){
-            basic.showNumber(input.lightLevel()/254*100);
+            basic.showNumber(Math.round(input.lightLevel()/254*100));
   }
 
 
-  //% color="#a9a9a9" weight=58 blockId=IO_relay block="ﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode|" group="4 iːoリレー"
+  //% color="#696969" weight=58 blockId=IO_relay block="ﾘﾚｰ(ﾃﾞｼﾞﾀﾙ出力) |%mode|" group="4 iːoリレー"
   export function IO_relay(mode: onoff) {
     switch (mode) {
       case onoff.ON:{
@@ -1338,7 +1338,7 @@ namespace newio_blocks {
         }
     }
   }
-  //% color="#a9a9a9" weight=56 blockId=IO_relay_2 block="ﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%syuturyoku|" group="4 iːoリレー"
+  //% color="#696969" weight=56 blockId=IO_relay_2 block="ﾘﾚｰ(ｱﾅﾛｸﾞ出力) |%syuturyoku|" group="4 iːoリレー"
   //% syuturyoku.min=0 syuturyoku.max=1023
   export function IO_relay_2(syuturyoku: number) {
         return pins.analogWritePin(AnalogPin.P8, syuturyoku);
