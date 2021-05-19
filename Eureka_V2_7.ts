@@ -1194,7 +1194,7 @@ namespace newio_blocks {
     basic.pause(second * 1000);
   }
 
-  //% color="#858585" weight=36 block="iːo 人が動いたら" group="2 iːo人感センサー"
+  //% color="#858585" weight=36 block="人が動いたら" group="2 iːo人感センサー"
   export function IO_humanDetection(): boolean {
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P14) == 1) {
@@ -1216,6 +1216,33 @@ namespace newio_blocks {
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
        basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
   }
+
+  //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="光ｾﾝｻ値 |%limit| より暗い" group="microbitの光ｾﾝｻ"
+  //% limit.min=0 limit.max=255
+  export function microbit2_decideLight(limit: number) :boolean{
+        if (input.lightLevel()  < limit) {            
+          return true;
+        } else {
+          return false;
+        }
+   }
+
+
+
+  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="microbitの光ｾﾝｻ"
+  export function microbit2_denkitemp():number{
+
+        return input.lightLevel();
+
+  }
+
+
+  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="microbitの光ｾﾝｻ"
+  export function microbit2_denkiLED(){
+            basic.showNumber(input.lightLevel());
+  }
+
+
 
 
 
