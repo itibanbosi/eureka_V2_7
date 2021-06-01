@@ -313,7 +313,7 @@ namespace eureka_blocks_soro {
     switch (pin) {
       case eureka_IO.A:        
         volt=pins.analogReadPin(AnalogPin.P0);
-        if (volt>300) {
+        if (volt>350) {
         basic.showString("OK");    
         }  
         else{
@@ -323,17 +323,17 @@ namespace eureka_blocks_soro {
         break; 
       case eureka_IO.B:
         volt=pins.analogReadPin(AnalogPin.P1);
-        if (volt>300) {
+        if (volt>350) {
         basic.showString("OK");    
         }  
         else{
-        basic.showString("NG NG NG");      
+        basic.showString("△  △   △");      
         music.playTone(262, music.beat(BeatFraction.Whole))
         }
         break;
      case eureka_IO.C:
         volt=pins.analogReadPin(AnalogPin.P2);
-        if (volt>300) {
+        if (volt>350) {
         basic.showString("OK");    
         }  
         else{
