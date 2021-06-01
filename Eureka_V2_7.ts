@@ -307,7 +307,40 @@ namespace eureka_blocks {
 
 namespace eureka_blocks_soro {
 
-  //% color="#4169e1" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
+  //% color="#4169e1" weight=26 blockId=eureka_O2check block="酸素センサー電池チェック ﾎﾟｰﾄ|%pin|" group="酸素センサー"
+  export function eureka_O2chekck(pin: eureka_IO) {
+    let volt;
+    switch (pin) {
+      case eureka_IO.A:        
+        volt=pins.analogReadPin(AnalogPin.P0);
+        if (volt>300) {
+        basic.showString("○");    
+        }  
+        else{
+        basic.showString("×");      
+        }
+        break; 
+      case eureka_IO.B:
+        volt=pins.analogReadPin(AnalogPin.P1);
+        if (volt>300) {
+        basic.showString("○");    
+        }  
+        else{
+        basic.showString("×");      
+        }
+        break;
+     case eureka_IO.C:
+        volt=pins.analogReadPin(AnalogPin.P2);
+        if (volt>300) {
+        basic.showString("○");    
+        }  
+        else{
+        basic.showString("×");      
+        }
+        break; 
+    }
+  }
+    //% color="#4169e1" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
   export function eureka_O2kousei(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.A:
