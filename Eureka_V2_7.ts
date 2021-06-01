@@ -1,3 +1,5 @@
+/* Ver3.2 */
+
 enum eureka_IO {
   B,
   A,
@@ -1131,7 +1133,7 @@ namespace newio_blocks {
 
 
 
-    //% color="#4741f1" weight=89 blockId=neopixel_blue block="青信号 点灯|%mode|" group="1 iːoネオピクセル"
+    //% color="#4741f1" weight=89 blockId=neopixel_blue block="iːo青信号 点灯|%mode|" group="1 iːoネオピクセル"
     export function neopixel_blue_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1146,7 +1148,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#ffa800" weight=86 blockId=neopixel_yellow block="黄信号 点灯|%mode|" group="1 iːoネオピクセル"
+    //% color="#ffa800" weight=86 blockId=neopixel_yellow block="iːo黄信号 点灯|%mode|" group="1 iːoネオピクセル"
     export function neopixel_yellow_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1161,7 +1163,7 @@ namespace newio_blocks {
     }
   }
 
-    //% color="#ff4940" weight=84 blockId=neopixel_red block="赤信号 点灯|%mode|" group="1 iːoネオピクセル"
+    //% color="#ff4940" weight=84 blockId=neopixel_red block="iːo赤信号 点灯|%mode|" group="1 iːoネオピクセル"
     export function neopixel_red_block(mode: onoff) {
     switch (mode) {
       case  onoff.ON :
@@ -1260,7 +1262,7 @@ namespace newio_blocks {
   }
 
 
-  //% color="#a0522d" weight=36 block="人が動いたら" group="2 iːo人感センサー"
+  //% color="#a0522d" weight=36 block="iːo人が動いたら" group="2 iːo人感センサー"
   export function IO_humanDetection(): boolean {
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
         if (pins.digitalReadPin(DigitalPin.P14) == 1) {
@@ -1270,20 +1272,20 @@ namespace newio_blocks {
         }
   }
  
-  //% color="#a0522d" weight=34 blockId=IO_human block="人感ｾﾝｻ値" group="2 iːo人感センサー"
+  //% color="#a0522d" weight=34 blockId=IO_human block="iːo人感ｾﾝｻ値" group="2 iːo人感センサー"
     export function IO_human(): number {
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
         return pins.digitalReadPin(DigitalPin.P14);
   }
 
-  //% color="#a0522d"  weight=79 blockId=IO_human_DISP block="人感ｾﾝｻの値を表示する" group="2 iːo人感センサー"
+  //% color="#a0522d"  weight=79 blockId=IO_human_DISP block="iːo人感ｾﾝｻの値を表示する" group="2 iːo人感センサー"
   export function IO_human_DISP() {
 
     pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
        basic.showNumber(pins.digitalReadPin(DigitalPin.P14));
   }
 
-  //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="光ｾﾝｻ値 |%limit| より暗い" group="3 microbitの光ｾﾝｻ"
+  //% color="#009A00"  weight=81 blockId=microbit2_decideLight block="m:bit光ｾﾝｻ値 |%limit| より暗い" group="3 microbitの光ｾﾝｻ"
   //% limit.min=0 limit.max=100
   export function microbit2_decideLight(limit: number) :boolean{
         if (input.lightLevel()/254*100  < limit) {            
@@ -1295,7 +1297,7 @@ namespace newio_blocks {
 
 
 
-  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="光ｾﾝｻ値" group="3 microbitの光ｾﾝｻ"
+  //% color="#009A00"  weight=80 blockId=microbit2_denkitemp block="m:bit光ｾﾝｻ値" group="3 microbitの光ｾﾝｻ"
   export function microbit2_denkitemp():number{
 
         return Math.round(input.lightLevel()/254*100);
@@ -1303,13 +1305,13 @@ namespace newio_blocks {
   }
 
 
-  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="光ｾﾝｻの値を表示する" group="3 microbitの光ｾﾝｻ"
+  //% color="#228b22"  weight=82 blockId=microbit2_denkiLED block="m:bit光ｾﾝｻの値を表示する" group="3 microbitの光ｾﾝｻ"
   export function microbit2_denkiLED(){
             basic.showNumber(Math.round(input.lightLevel()/254*100));
   }
 
 
-  //% color="#696969" weight=58 blockId=IO_relay block="ﾘﾚｰ(ﾃﾞｼﾞﾀﾙ) |%mode|" group="4 iːoリレー"
+  //% color="#696969" weight=58 blockId=IO_relay block="iːoﾘﾚｰ(ﾃﾞｼﾞﾀﾙ) |%mode|" group="4 iːoリレー"
   export function IO_relay(mode: onoff) {
     switch (mode) {
       case onoff.ON:{
@@ -1320,7 +1322,7 @@ namespace newio_blocks {
         }
     }
   }
-  //% color="#696969" weight=56 blockId=IO_relay_2 block="ﾘﾚｰ(ｱﾅﾛｸﾞ) |%syuturyoku|" group="4 iːoリレー"
+  //% color="#696969" weight=56 blockId=IO_relay_2 block="iːoﾘﾚｰ(ｱﾅﾛｸﾞ) |%syuturyoku|" group="4 iːoリレー"
   //% syuturyoku.min=0 syuturyoku.max=1023
   export function IO_relay_2(syuturyoku: number) {
         return pins.analogWritePin(AnalogPin.P8, syuturyoku);
