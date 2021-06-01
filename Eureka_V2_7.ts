@@ -320,7 +320,7 @@ namespace eureka_blocks_soro {
         }  
         else{
         basic.showNumber(volt);
-        basic.showString("NG NG NG");      
+        basic.showString("NG");      
         music.playTone(262, music.beat(BeatFraction.Whole))
         }
         break; 
@@ -333,7 +333,7 @@ namespace eureka_blocks_soro {
         }  
         else{
         basic.showNumber(volt);
-        basic.showString("NG NG NG");      
+        basic.showString("NG");      
         music.playTone(262, music.beat(BeatFraction.Whole))
         }
         break;
@@ -346,7 +346,7 @@ namespace eureka_blocks_soro {
         }  
         else{
         basic.showNumber(volt);
-        basic.showString("NG NG NG");      
+        basic.showString("NG");      
         music.playTone(262, music.beat(BeatFraction.Whole))
         }
         break; 
