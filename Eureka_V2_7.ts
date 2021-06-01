@@ -1,21 +1,21 @@
 /* Ver3.2 Eureka_IO &　iːo*/
 
 enum eureka_IO {
-  A,
   B,
+  A,
   C,
 }
 enum eureka_denki {
-  A,
   B,
+  A,
 }
 enum eureka_tlp {
-  A,
   B,
+  A,
 }
 enum eureka_p1416 {
-  A,
   B,
+  A,
 }
 enum onoff {
   ON,
@@ -307,7 +307,7 @@ namespace eureka_blocks {
 
 namespace eureka_blocks_soro {
 
-  //% color="#4169e1" weight=26 blockId=eureka_O2check block="酸素センサー電池チェック ﾎﾟｰﾄ|%pin|" group="酸素センサー"
+  //% color="#4169e1" weight=50 blockId=eureka_O2check block="酸素センサー電池チェック ﾎﾟｰﾄ|%pin|" group="酸素センサー"
   export function eureka_O2chekck(pin: eureka_IO) {
     let volt;
     switch (pin) {
@@ -352,7 +352,7 @@ namespace eureka_blocks_soro {
         break; 
     }
   }
-    //% color="#4169e1" weight=26 blockId=eureka_O2kousei block="酸素センサー校正 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
+    //% color="#4169e1" weight=48 blockId=eureka_O2kousei block="酸素センサー校正 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
   export function eureka_O2kousei(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.A:
@@ -366,7 +366,7 @@ namespace eureka_blocks_soro {
         break; 
         }
   }
-  //% color="#4169e1" weight=26 blockId=eureka_O2LED block="酸素濃度をmicro:bitへ表示 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
+  //% color="#4169e1" weight=46 blockId=eureka_O2LED block="酸素濃度をmicro:bitへ表示 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
   export function eureka_O2LED(pin: eureka_IO) {
     switch (pin) {
       case eureka_IO.A:
@@ -399,7 +399,7 @@ namespace eureka_blocks_soro {
         }
   }
 
- //% color="#4169e1" weight=26 blockId=eureka_O2serial block="酸素濃度をシリアル出力 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
+ //% color="#4169e1" weight=44 blockId=eureka_O2serial block="酸素濃度をシリアル出力 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
   export function eureka_O2serial(pin: eureka_IO) {
     basic.pause(100);
     switch (pin) {
@@ -415,7 +415,7 @@ namespace eureka_blocks_soro {
         }
   }
 
-  //% color="#4169e1"  weight=24 blockId=eureka_O2disp block="酸素濃度 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
+  //% color="#4169e1"  weight=40 blockId=eureka_O2disp block="酸素濃度 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
   export function eureka_O2disp(pin: eureka_IO): number {
     switch (pin) {
       case eureka_IO.A:
@@ -1169,7 +1169,7 @@ namespace eureka_blocks_soro {
         }
     }
   }
-/*
+
 }
 
 //% color="#ff4500" weight=90 block="iːo(ｲｰｵ)専用"
@@ -1372,8 +1372,6 @@ namespace newio_blocks {
   export function IO_relay_2(syuturyoku: number) {
         return pins.analogWritePin(AnalogPin.P8, syuturyoku);
   }
-*/
-
 }
 
 
