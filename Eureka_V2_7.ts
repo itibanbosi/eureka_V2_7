@@ -1,21 +1,21 @@
 /* Ver3.2 Eureka_IO &　iːo*/
 
 enum eureka_IO {
-  B,
   A,
+  B,
   C,
 }
 enum eureka_denki {
-  B,
   A,
+  B,
 }
 enum eureka_tlp {
-  B,
   A,
+  B,
 }
 enum eureka_p1416 {
-  B,
   A,
+  B,
 }
 enum onoff {
   ON,
@@ -1169,7 +1169,7 @@ namespace eureka_blocks_soro {
         }
     }
   }
-
+/*
 }
 
 //% color="#ff4500" weight=90 block="iːo(ｲｰｵ)専用"
@@ -1372,6 +1372,7 @@ namespace newio_blocks {
   export function IO_relay_2(syuturyoku: number) {
         return pins.analogWritePin(AnalogPin.P8, syuturyoku);
   }
+*/
 
 }
 
