@@ -113,7 +113,7 @@ enum LED_wait {
 
 namespace eureka_blocks {
 
-  //% color="#4741f1" weight=89 blockId=eureka_tl_blue block="青信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
+  //% color="#4741f1" weight=89 blockId=eureka_tl_blue block="(複合)青信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
   //% advanced=true
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
@@ -131,7 +131,7 @@ namespace eureka_blocks {
         }
     }
   }
-  //% color="#ffa800" weight=87 blockId=eureka_tl_yellow block="黄信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
+  //% color="#ffa800" weight=87 blockId=eureka_tl_yellow block="(複合)黄信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
   //% advanced=true
   export function eureka_tl_yellow(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
@@ -149,7 +149,7 @@ namespace eureka_blocks {
         }
     }
   }
-  //% color="#ff4940" weight=85 blockId=eureka_tl_red block="赤信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
+  //% color="#ff4940" weight=85 blockId=eureka_tl_red block="(複合)赤信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
   //% advanced=true
   export function eureka_tl_red(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
