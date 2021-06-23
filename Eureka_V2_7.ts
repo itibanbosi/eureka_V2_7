@@ -113,18 +113,7 @@ enum LED_wait {
 
 namespace eureka_blocks {
 
-    //% blockId=eureka_buz_set
-    //% block=ﾕｰﾚｶIOﾎﾞｯｸｽで音をならす
-    // group="1_初期設定"
-    //% color="#ff3d03"
-    //% weight=94
-
-    export function eureka_buz_set() {
-    pins.analogSetPitchPin(AnalogPin.P8);
-  }
-
-
-    //% color="#4741f1" weight=89 blockId=eureka_tl_blue block="青信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
+  //% color="#4741f1" weight=89 blockId=eureka_tl_blue block="青信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
   //% advanced=true
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
@@ -143,6 +132,7 @@ namespace eureka_blocks {
     }
   }
   //% color="#ffa800" weight=87 blockId=eureka_tl_yellow block="黄信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
+  //% advanced=true
   export function eureka_tl_yellow(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
       case eureka_tlp.A:
@@ -160,6 +150,7 @@ namespace eureka_blocks {
     }
   }
   //% color="#ff4940" weight=85 blockId=eureka_tl_red block="赤信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
+  //% advanced=true
   export function eureka_tl_red(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
       case eureka_tlp.A:
@@ -178,6 +169,7 @@ namespace eureka_blocks {
   }
 
   //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="2_信号機ユニット"
+  //% advanced=true
   //% second.min=0 second.max=10
   export function driveForwards(second: number): void {
     basic.pause(second * 1000);
@@ -683,7 +675,6 @@ namespace eureka_blocks_soro {
   export function eureka_tempDS(pin: eureka_IO): number {
     switch (pin) {
       case eureka_IO.A:
-        eureka_blocks.eureka_buz_set()
         return Math.round(dstemp.celsius(DigitalPin.P0)  
         );
         break;
