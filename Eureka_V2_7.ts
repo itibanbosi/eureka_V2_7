@@ -1,4 +1,4 @@
-/* Ver3.2 Eureka_IO &　iːo*/
+/* Ver3.4 Eureka_IO &　iːo*/
 
 enum eureka_IO {
   B,
@@ -109,7 +109,7 @@ enum LED_wait {
 
     let io_neo = neopixel.create(DigitalPin.P9, 4, NeoPixelMode.RGB);
     
-//% color="#32cd32" weight=94 block="ふく合ﾕﾆｯﾄ"
+//% color="#32cd32" weight=90 block="ふく合ﾕﾆｯﾄ"
 
 namespace eureka_blocks {
 
@@ -125,6 +125,7 @@ namespace eureka_blocks {
 
 
     //% color="#4741f1" weight=89 blockId=eureka_tl_blue block="青信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
+  //% advanced=true
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
     switch (pin) {
       case eureka_tlp.A:
@@ -1172,7 +1173,7 @@ namespace eureka_blocks_soro {
 
 }
 
-//% color="#ff4500" weight=90 block="iːo(ｲｰｵ)専用"
+//% color="#ff4500" weight=94 block="iːo(ｲｰｵ)専用"
 
 namespace newio_blocks {
 
