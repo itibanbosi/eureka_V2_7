@@ -1281,6 +1281,14 @@ namespace newio_blocks {
         break;
     }
   }
+    //% color="#9400d3" weight=81 blockId=neopixel_reinbow block="にじ色にする" group="ﾌﾟﾛｯﾄｶｰLED"
+    export function neopixel_rainbow() {
+        let io_neo2 = neopixel.create(DigitalPin.P9, 24, NeoPixelMode.RGB)
+        io_neo2.showRainbow(1, 360)
+    }
+
+
+
 
     //% color="#cd853f" weight=80 blockId=neopixel_erace block="ﾌﾙｶﾗｰLEDを全部消す" group="1 iːoネオピクセル"
     export function neopixel_erace_block() {
