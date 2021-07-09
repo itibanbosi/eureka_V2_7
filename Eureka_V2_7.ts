@@ -306,43 +306,59 @@ namespace eureka_blocks_soro {
     switch (pin) {
       case eureka_IO.A:        
         volt=pins.analogReadPin(AnalogPin.P0);
-        if (volt>350) {
+        if (volt>200) {
         basic.showNumber(volt);
-        music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
-        basic.showString("OK");    
+        music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once);  
+        basic.showIcon(IconNames.Diamond) ;
+        } 
+        if (volt<=200 && volt>=100 ) {
+        basic.showNumber(volt);
+        music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
+        basic.showIcon(IconNames.Triangle) 
         }  
-        else{
+        if (volt<100 ) {
         basic.showNumber(volt);
-        basic.showString("NG");      
-        music.playTone(262, music.beat(BeatFraction.Whole))
-        }
+        music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
+        basic.showIcon(IconNames.No)
+        }          
         break; 
-      case eureka_IO.B:
+    case eureka_IO.B:        
         volt=pins.analogReadPin(AnalogPin.P1);
-        if (volt>350) {
+        if (volt>200) {
         basic.showNumber(volt);
-        music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
-        basic.showString("OK");    
+        music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once);  
+        basic.showIcon(IconNames.Diamond) ;
+        } 
+        if (volt<=200 && volt>=100 ) {
+        basic.showNumber(volt);
+        music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
+        basic.showIcon(IconNames.Triangle) 
         }  
-        else{
+        if (volt<100 ) {
         basic.showNumber(volt);
-        basic.showString("NG");      
-        music.playTone(262, music.beat(BeatFraction.Whole))
-        }
-        break;
-     case eureka_IO.C:
-        volt=pins.analogReadPin(AnalogPin.P2);
-        if (volt>350) {
-        basic.showNumber(volt);
-        music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
-        basic.showString("OK");    
-        }  
-        else{
-        basic.showNumber(volt);
-        basic.showString("NG");      
-        music.playTone(262, music.beat(BeatFraction.Whole))
-        }
+        music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
+        basic.showIcon(IconNames.No)
+        }          
         break; 
+    case eureka_IO.C:        
+        volt=pins.analogReadPin(AnalogPin.P2);
+        if (volt>200) {
+        basic.showNumber(volt);
+        music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once);  
+        basic.showIcon(IconNames.Diamond) ;
+        } 
+        if (volt<=200 && volt>=100 ) {
+        basic.showNumber(volt);
+        music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
+        basic.showIcon(IconNames.Triangle) 
+        }  
+        if (volt<100 ) {
+        basic.showNumber(volt);
+        music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
+        basic.showIcon(IconNames.No)
+        }          
+        break; 
+
     }
   }
     //% color="#4169e1" weight=48 blockId=eureka_O2kousei block="酸素センサー校正 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
