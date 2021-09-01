@@ -1285,8 +1285,7 @@ namespace newio_blocks {
   }
     //% color="#9400d3" weight=81 blockId=neopixel_reinbow block="にじ色にする" group="ﾌﾟﾛｯﾄｶｰLED"
     export function neopixel_rainbow() {
-        let io_neo2 = neopixel.create(DigitalPin.P9, 3, NeoPixelMode.RGB)
-        io_neo2.showRainbow(1, 360)
+        io_neo.showRainbow(1, 180)
     }
 
 
