@@ -1190,11 +1190,13 @@ namespace newio_blocks {
       case  onoff.ON :
         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Blue))
         io_neo.show()
+        basic.pause(5);
         break;
                 
       case onoff.OFF:
-         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-         io_neo.show()
+        io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+        io_neo.show()
+        basic.pause(5);
         break;
     }
   }
@@ -1205,11 +1207,13 @@ namespace newio_blocks {
       case  onoff.ON :
         io_neo.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
         io_neo.show()
+        basic.pause(5);
         break;
                 
       case onoff.OFF:
-         io_neo.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-         io_neo.show()
+        io_neo.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+        io_neo.show()
+        basic.pause(5);
         break;
     }
   }
@@ -1220,11 +1224,13 @@ namespace newio_blocks {
       case  onoff.ON :
         io_neo.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
         io_neo.show()
+        basic.pause(5);
         break;
                 
       case onoff.OFF:
-         io_neo.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-         io_neo.show()
+        io_neo.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+        io_neo.show()
+        basic.pause(5);
         break;
     }
   }
