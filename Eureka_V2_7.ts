@@ -1190,13 +1190,13 @@ namespace newio_blocks {
       case  onoff.ON :
         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Blue))
         io_neo.show()
-        basic.pause(5);
+        basic.pause(10);
         break;
                 
       case onoff.OFF:
         io_neo.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
         io_neo.show()
-        basic.pause(5);
+        basic.pause(10);
         break;
     }
   }
