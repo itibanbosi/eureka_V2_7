@@ -116,56 +116,68 @@ namespace eureka_blocks {
   //% color="#4741f1" weight=89 blockId=eureka_tl_blue block="(複合)青信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
   //% advanced=true
     export function eureka_tl_blue(mode: onoff, pin: eureka_tlp) {
-    switch (pin) {
-      case eureka_tlp.A:
-        if (mode == onoff.ON) {
-          return pins.digitalWritePin(DigitalPin.P14, 1);
-        } else {
-          return pins.digitalWritePin(DigitalPin.P14, 0);
+        switch (pin) {
+            case eureka_tlp.A:
+                if (mode == onoff.ON) {
+                    pins.digitalWritePin(DigitalPin.P14, 1);
+                    return basic.pause(5);
+                } else {
+                    pins.digitalWritePin(DigitalPin.P14, 0);
+                    return basic.pause(5);
+                }
+            case eureka_tlp.B:
+                if (mode == onoff.ON) {
+                    pins.digitalWritePin(DigitalPin.P16, 1);
+                    return basic.pause(5);
+                } else {
+                    pins.digitalWritePin(DigitalPin.P16, 0);
+                    return basic.pause(5);
+                }
         }
-      case eureka_tlp.B:
-        if (mode == onoff.ON) {
-          return pins.digitalWritePin(DigitalPin.P16, 1);
-        } else {
-          return pins.digitalWritePin(DigitalPin.P16, 0);
-        }
-    }
   }
   //% color="#ffa800" weight=87 blockId=eureka_tl_yellow block="(複合)黄信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
   //% advanced=true
   export function eureka_tl_yellow(mode: onoff, pin: eureka_tlp) {
-    switch (pin) {
-      case eureka_tlp.A:
-        if (mode == onoff.ON) {
-          return pins.digitalWritePin(DigitalPin.P13, 1);
-        } else {
-          return pins.digitalWritePin(DigitalPin.P13, 0);
-        }
-      case eureka_tlp.B:
-        if (mode == onoff.ON) {
-          return pins.digitalWritePin(DigitalPin.P15, 1);
-        } else {
-          return pins.digitalWritePin(DigitalPin.P15, 0);
-        }
-    }
+      switch (pin) {
+          case eureka_tlp.A:
+              if (mode == onoff.ON) {
+                  pins.digitalWritePin(DigitalPin.P13, 1);
+                  return basic.pause(5);
+              } else {
+                  pins.digitalWritePin(DigitalPin.P13, 0);
+                  return basic.pause(5);
+              }
+          case eureka_tlp.B:
+              if (mode == onoff.ON) {
+                  pins.digitalWritePin(DigitalPin.P15, 1);
+                  return basic.pause(5);
+              } else {
+                  pins.digitalWritePin(DigitalPin.P15, 0);
+                  return basic.pause(5);
+              }
+      }
   }
   //% color="#ff4940" weight=85 blockId=eureka_tl_red block="(複合)赤信号 点灯|%mode| ﾎﾟｰﾄ|%pin|" group="2_信号機ユニット"
   //% advanced=true
   export function eureka_tl_red(mode: onoff, pin: eureka_tlp) {
-    switch (pin) {
-      case eureka_tlp.A:
-        if (mode == onoff.ON) {
-          return pins.digitalWritePin(DigitalPin.P0, 1);
-        } else {
-          return pins.digitalWritePin(DigitalPin.P0, 0);
-        }
-      case eureka_tlp.B:
-        if (mode == onoff.ON) {
-          return pins.digitalWritePin(DigitalPin.P1, 1);
-        } else {
-          return pins.digitalWritePin(DigitalPin.P1, 0);
-        }
-    }
+      switch (pin) {
+          case eureka_tlp.A:
+              if (mode == onoff.ON) {
+                  pins.digitalWritePin(DigitalPin.P0, 1);
+                  return basic.pause(5);
+              } else {
+                  pins.digitalWritePin(DigitalPin.P0, 0);
+                  return basic.pause(5);
+              }
+          case eureka_tlp.B:
+              if (mode == onoff.ON) {
+                  pins.digitalWritePin(DigitalPin.P1, 1);
+                  return basic.pause(5);
+              } else {
+                  pins.digitalWritePin(DigitalPin.P1, 0);
+                  return basic.pause(5);
+              }
+      }
   }
 
   //% color="#1E90FF" weight=83 block="待ち時間（秒）|%second|" group="2_信号機ユニット"
