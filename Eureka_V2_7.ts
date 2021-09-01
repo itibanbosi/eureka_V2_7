@@ -348,6 +348,7 @@ namespace eureka_blocks_soro {
   }
     //% color="#4169e1" weight=48 blockId=eureka_O2kousei block="酸素センサー校正 ﾎﾟｰﾄ|%pin|" group="酸素センサー"
   export function eureka_O2kousei(pin: eureka_IO) {
+    music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once);
     switch (pin) {
       case eureka_IO.A:
         kousei_A=pins.analogReadPin(AnalogPin.P0);
