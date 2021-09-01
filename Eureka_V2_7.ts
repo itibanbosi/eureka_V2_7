@@ -1219,9 +1219,10 @@ namespace newio_blocks {
     //% color="#20b2aa" weight=82 blockId=neopixel_select block="ﾌﾙｶﾗｰLED |%neo_color| 色で |%neo_number|個つける" group="1 iːoネオピクセル"
     //% neo_number.min=0 neo_number.max=3
     export function neopixel_select_block(neo_color: neoLED_color,neo_number:number) {
-        for (let n = 0; 3; n++) {
+        for (let n = 0; n < 2; n++) {
             io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Black))
         }
+        io_neo.show()
     switch (neo_color){
         case neoLED_color.赤 :
         for (let n=0 ; n < neo_number;n++){
@@ -1285,7 +1286,7 @@ namespace newio_blocks {
         break;
     }
   }
-    //% color="#9400d3" weight=81 blockId=neopixel_reinbow block="にじ色にする" group="ﾌﾟﾛｯﾄｶｰLED"
+    //% color="#9400d3" weight=81 blockId=neopixel_reinbow block="にじ色にする" group="1 iːoネオピクセル"
     export function neopixel_rainbow() {
         io_neo.showRainbow(1, 180)
     }
