@@ -107,7 +107,7 @@ enum LED_wait {
     two,
     }
 
-    let io_neo = neopixel.create(DigitalPin.P9, 4, NeoPixelMode.RGB);
+    let io_neo = neopixel.create(DigitalPin.P9, 3, NeoPixelMode.RGB);
     
 //% color="#32cd32" weight=90 block="ふく合ﾕﾆｯﾄ"
 
@@ -311,12 +311,7 @@ namespace eureka_blocks_soro {
         music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once);  
         basic.showIcon(IconNames.Diamond) ;
         } 
-        if (volt<=200 && volt>=100 ) {
-        basic.showNumber(volt);
-        music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
-        basic.showIcon(IconNames.Triangle) 
-        }  
-        if (volt<100 ) {
+        if (volt<=200 ) {
         basic.showNumber(volt);
         music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
         basic.showIcon(IconNames.No)
@@ -329,12 +324,7 @@ namespace eureka_blocks_soro {
         music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once);  
         basic.showIcon(IconNames.Diamond) ;
         } 
-        if (volt<=200 && volt>=100 ) {
-        basic.showNumber(volt);
-        music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
-        basic.showIcon(IconNames.Triangle) 
-        }  
-        if (volt<100 ) {
+        if (volt<=200 ) {
         basic.showNumber(volt);
         music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
         basic.showIcon(IconNames.No)
@@ -347,12 +337,7 @@ namespace eureka_blocks_soro {
         music.startMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once);  
         basic.showIcon(IconNames.Diamond) ;
         } 
-        if (volt<=200 && volt>=100 ) {
-        basic.showNumber(volt);
-        music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
-        basic.showIcon(IconNames.Triangle) 
-        }  
-        if (volt<100 ) {
+        if (volt<=200 ) {
         basic.showNumber(volt);
         music.startMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once)
         basic.showIcon(IconNames.No)
@@ -1232,6 +1217,7 @@ namespace newio_blocks {
   }
  
     //% color="#20b2aa" weight=82 blockId=neopixel_select block="ﾌﾙｶﾗｰLED |%neo_color| 色で |%neo_number|個つける" group="1 iːoネオピクセル"
+    //% neo_number.min=1 neo_number.max=3
     export function neopixel_select_block(neo_color: neoLED_color,neo_number:number) {
 
     switch (neo_color){
@@ -1299,7 +1285,7 @@ namespace newio_blocks {
   }
     //% color="#9400d3" weight=81 blockId=neopixel_reinbow block="にじ色にする" group="ﾌﾟﾛｯﾄｶｰLED"
     export function neopixel_rainbow() {
-        let io_neo2 = neopixel.create(DigitalPin.P9, 24, NeoPixelMode.RGB)
+        let io_neo2 = neopixel.create(DigitalPin.P9, 3, NeoPixelMode.RGB)
         io_neo2.showRainbow(1, 360)
     }
 
@@ -1308,7 +1294,7 @@ namespace newio_blocks {
 
     //% color="#cd853f" weight=80 blockId=neopixel_erace block="ﾌﾙｶﾗｰLEDを全部消す" group="1 iːoネオピクセル"
     export function neopixel_erace_block() {
-        for (let n=0 ; n < 4 ; n++){
+        for (let n=0 ; n < 2 ; n++){
         io_neo.setPixelColor(n, neopixel.colors(NeoPixelColors.Black))            
         } 
         io_neo.show()
