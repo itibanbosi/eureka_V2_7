@@ -692,10 +692,10 @@ namespace eureka_blocks_soro {
             return Math.round(DS18B20.TemperatureNumber(DS18B20.pin.pin0));
         break;
       case eureka_IO.B:
-            return Math.round(DS18B20.TemperatureNumber(DS18B20.pin.pin0));
+            return Math.round(DS18B20.TemperatureNumber(DS18B20.pin.pin1));
         break;
       case eureka_IO.C:
-            return Math.round(DS18B20.TemperatureNumber(DS18B20.pin.pin0));
+            return Math.round(DS18B20.TemperatureNumber(DS18B20.pin.pin2));
         break;
     }
   }
