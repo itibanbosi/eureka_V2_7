@@ -6,8 +6,8 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "microbit-dstemp": "github:bsiever/microbit-dstemp#v0.1.20",
-        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3"
+        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3",
+        "ds18b20": "github:DFRobot/pxt-ds18b20#v0.1.0"
     },
     "files": [
         "README.md",
@@ -20,7 +20,7 @@
     ],
     "public": true,
     "targetVersions": {
-        "target": "4.0.11",
+        "target": "4.0.16",
         "targetId": "microbit"
     },
     "supportedTargets": [

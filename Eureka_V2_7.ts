@@ -689,16 +689,13 @@ namespace eureka_blocks_soro {
   export function eureka_tempDS(pin: eureka_IO): number {
     switch (pin) {
       case eureka_IO.A:
-        return Math.round(dstemp.celsius(DigitalPin.P0)  
-        );
+            return Math.round(DS18B20.TemperatureNumber(DS18B20.pin.pin0));
         break;
       case eureka_IO.B:
-        return Math.round(dstemp.celsius(DigitalPin.P1)
-        );
+            return Math.round(DS18B20.TemperatureNumber(DS18B20.pin.pin0));
         break;
       case eureka_IO.C:
-        return Math.round(dstemp.celsius(DigitalPin.P2)
-        );
+            return Math.round(DS18B20.TemperatureNumber(DS18B20.pin.pin0));
         break;
     }
   }
